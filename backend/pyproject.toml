@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-karmayogi-backend"
+version = "1.0.0"
+description = "AI-enabled learning platform that identifies competency gaps, recommends personalized training, and generates quizzes for Mission Karmayogi (SIH26101)"
+authors = [
+    { name = "AI Karmayogi Technical Core", email = "karmayogi-dev@nic.in" }
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.31.0",
+    "pydantic>=2.9.2",
+    "pydantic-settings>=2.5.2",
+    "sqlalchemy[asyncio]>=2.0.35",
+    "asyncpg>=0.29.0",
+    "pgvector>=0.3.5",
+    "redis>=5.1.0",
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+    "pymupdf>=1.24.11",
+    "httpx>=0.27.2",
+    "langchain-core>=0.3.5",
+    "langchain-community>=0.3.3"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]

@@ -1,0 +1,142 @@
+[
+  {
+    "file": "src/components/certificates/CertificateCard.tsx",
+    "line": 86,
+    "col": 133,
+    "code": "1382",
+    "msg": "Unexpected token. Did you mean `{'>'}` or `&gt;`?"
+  },
+  {
+    "file": "src/components/notifications/NotificationCenter.tsx",
+    "line": 113,
+    "col": 64,
+    "code": "1161",
+    "msg": "Unterminated regular expression literal."
+  },
+  {
+    "file": "src/components/notifications/NotificationCenter.tsx",
+    "line": 115,
+    "col": 70,
+    "code": "1161",
+    "msg": "Unterminated regular expression literal."
+  },
+  {
+    "file": "src/components/notifications/NotificationCenter.tsx",
+    "line": 117,
+    "col": 61,
+    "code": "1161",
+    "msg": "Unterminated regular expression literal."
+  },
+  {
+    "file": "src/components/notifications/NotificationCenter.tsx",
+    "line": 119,
+    "col": 66,
+    "code": "1161",
+    "msg": "Unterminated regular expression literal."
+  },
+  {
+    "file": "src/context/ToastContext.tsx",
+    "line": 78,
+    "col": 77,
+    "code": "1161",
+    "msg": "Unterminated regular expression literal."
+  },
+  {
+    "file": "src/context/ToastContext.tsx",
+    "line": 80,
+    "col": 71,
+    "code": "1109",
+    "msg": "Expression expected."
+  },
+  {
+    "file": "src/context/ToastContext.tsx",
+    "line": 81,
+    "col": 7,
+    "code": "1109",
+    "msg": "Expression expected."
+  },
+  {
+    "file": "src/context/ToastContext.tsx",
+    "line": 82,
+    "col": 79,
+    "code": "1161",
+    "msg": "Unterminated regular expression literal."
+  },
+  {
+    "file": "src/context/ToastContext.tsx",
+    "line": 134,
+    "col": 13,
+    "code": "1382",
+    "msg": "Unexpected token. Did you mean `{'>'}` or `&gt;`?"
+  },
+  {
+    "file": "src/pages/assessment/AssessmentPlayer.tsx",
+    "line": 257,
+    "col": 79,
+    "code": "1382",
+    "msg": "Unexpected token. Did you mean `{'>'}` or `&gt;`?"
+  },
+  {
+    "file": "src/pages/assessment/AssessmentPlayer.tsx",
+    "line": 260,
+    "col": 78,
+    "code": "1382",
+    "msg": "Unexpected token. Did you mean `{'>'}` or `&gt;`?"
+  },
+  {
+    "file": "src/pages/assessment/AssessmentPlayer.tsx",
+    "line": 263,
+    "col": 78,
+    "code": "1382",
+    "msg": "Unexpected token. Did you mean `{'>'}` or `&gt;`?"
+  },
+  {
+    "file": "src/pages/assessment/AssessmentResult.tsx",
+    "line": 108,
+    "col": 235,
+    "code": "1382",
+    "msg": "Unexpected token. Did you mean `{'>'}` or `&gt;`?"
+  },
+  {
+    "file": "src/pages/auth/ForgotPassword.tsx",
+    "line": 60,
+    "col": 162,
+    "code": "1382",
+    "msg": "Unexpected token. Did you mean `{'>'}` or `&gt;`?"
+  },
+  {
+    "file": "src/pages/certificates/CertificateCenter.tsx",
+    "line": 314,
+    "col": 224,
+    "code": "1382",
+    "msg": "Unexpected token. Did you mean `{'>'}` or `&gt;`?"
+  },
+  {
+    "file": "src/pages/certificates/CertificateCenter.tsx",
+    "line": 355,
+    "col": 146,
+    "code": "1382",
+    "msg": "Unexpected token. Did you mean `{'>'}` or `&gt;`?"
+  },
+  {
+    "file": "src/pages/profile/Profile.tsx",
+    "line": 154,
+    "col": 71,
+    "code": "1382",
+    "msg": "Unexpected token. Did you mean `{'>'}` or `&gt;`?"
+  },
+  {
+    "file": "src/pages/profile/Profile.tsx",
+    "line": 163,
+    "col": 74,
+    "code": "1382",
+    "msg": "Unexpected token. Did you mean `{'>'}` or `&gt;`?"
+  },
+  {
+    "file": "src/pages/profile/Profile.tsx",
+    "line": 172,
+    "col": 68,
+    "code": "1382",
+    "msg": "Unexpected token. Did you mean `{'>'}` or `&gt;`?"
+  }
+]

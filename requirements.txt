@@ -1,0 +1,33 @@
+# ==============================================================================
+# AI KARMAYOGI — PRODUCTION BACKEND DEPENDENCIES
+# Python 3.12/3.13 Compatible | Free & Open Source Stack Only (No Redis)
+# ==============================================================================
+
+# Core Web Framework & ASGI Server
+fastapi==0.115.0
+uvicorn[standard]==0.31.0
+pydantic==2.9.2
+pydantic-settings==2.5.2
+email-validator>=2.0.0
+python-multipart==0.0.12
+
+# Database & Vector Storage (PostgreSQL 16 + pgvector)
+sqlalchemy[asyncio]==2.0.35
+asyncpg==0.29.0
+psycopg2-binary==2.9.9
+pgvector==0.3.5
+alembic==1.13.3
+
+# Security, JWT & Cryptography
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.2.0
+
+# Local AI Engine & PDF Intelligence (PyMuPDF + nomic-embed-text + Qwen3)
+pymupdf==1.24.11
+httpx==0.27.2
+langchain-core==0.3.5
+langchain-community==0.3.3
+
+# System Utilities
+python-dotenv==1.0.1
