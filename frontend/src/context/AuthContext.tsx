@@ -49,19 +49,16 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     isLoading: true,
   });
 
-  const fetchProfile = async (token: string) => {
+  const fetchProfile = async () => {
     try {
       const user = await api.get<UserProfile>('/auth/me');
       setState({
         user,
-        token,
+        token: 'cookie-based',
         isAuthenticated: true,
         isLoading: false,
       });
     } catch (err) {
-      console.warn('Session expired or invalid token. Resetting...');
-      
-      
       setState({
         user: null,
         token: null,
@@ -72,12 +69,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   useEffect(() => {
-    const token = null;
-    if (!token) {
-      setState((prev) => ({ ...prev, isLoading: false, isAuthenticated: false, user: null }));
-      return;
-    }
-    fetchProfile(token);
+    fetchProfile();
   }, []);
 
   const login = async (email: string, password: string = 'Karmayogi2026!') => {
@@ -94,7 +86,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
       setState({
         user: res.user,
-        token: res.access_token,
+        token: 'cookie-based',
         isAuthenticated: true,
         isLoading: false,
       });
@@ -104,9 +96,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
-  const logout = () => {
-    
-    
+  const logout = async () => {
+    try {
+      await api.post('/auth/logout', {});
+    } catch (e) {}
     setState({
       user: null,
       token: null,
