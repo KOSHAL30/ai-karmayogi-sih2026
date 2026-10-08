@@ -66,9 +66,9 @@ app = FastAPI(
     description="Sovereign AI-Enabled Capacity Building & Competency Diagnostic Platform for Mission Karmayogi (SIH26101)",
     version="1.0.0",
     lifespan=lifespan,
-    docs_url="/api/v1/docs",
-    redoc_url="/api/v1/redoc",
-    openapi_url="/api/v1/openapi.json",
+    docs_url=None,
+    redoc_url=None,
+    openapi_url=None,
 )
 
 app.state.limiter = limiter
@@ -119,7 +119,10 @@ async def security_and_rate_limit_middleware(request: Request, call_next):
     response.headers["X-Frame-Options"] = "SAMEORIGIN"
     response.headers["X-XSS-Protection"] = "1; mode=block"
     response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
+    response.headers["Content-Security-Policy"] = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://sih20126.mkhejyz.mongodb.net;"
     response.headers["X-Response-Time"] = f"{duration_ms:.2f}ms"
+    if "server" in response.headers:
+        del response.headers["server"]
 
     # Audit Logging for Administrative & RAG routes
     if path.startswith("/api/v1/admin") or path.startswith("/api/v1/documents") or path.startswith("/api/v1/certificates"):

@@ -58,7 +58,7 @@ async def register(
             detail=f"Database service is offline ({type(e).__name__}). Please check MongoDB or use an existing demo account."
         )
 
-@router.post("/login", response_model=APIResponse[LoginResponseData])
+@router.post("/login", response_model=APIResponse)
 @limiter.limit("5/minute")
 async def login(
     request: Request,
@@ -95,7 +95,7 @@ async def login(
     
     return APIResponse(
         status="success",
-        data=login_data,
+        data={"user": login_data.user},
         message="Authentication successful."
     )
 

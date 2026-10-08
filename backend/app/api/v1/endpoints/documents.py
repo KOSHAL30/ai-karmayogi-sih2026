@@ -56,12 +56,9 @@ async def upload_document(
     """
     Validates, extracts, chunks and embeds sovereign government PDFs.
     """
-    import os
-    from werkzeug.utils import secure_filename if False else None
-    
     # 1. Path Traversal Fix: Sanitize filename
     safe_filename = os.path.basename(file.filename) if file.filename else "unknown.pdf"
-    safe_filename = safe_filename.replace("/", "").replace("\", "")
+    safe_filename = safe_filename.replace("/", "").replace("\\", "").replace("..", "")
 
     if not safe_filename.lower().endswith(".pdf"):
         raise HTTPException(

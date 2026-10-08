@@ -119,7 +119,7 @@ class AuthService:
             if not is_valid:
                 raise HTTPException(
                     status_code=status.HTTP_401_UNAUTHORIZED,
-                    detail="Invalid credentials."
+                    detail="Invalid credentials or inactive account."
                 )
 
             role_code = user.role.role_code if user.role else "learner"
