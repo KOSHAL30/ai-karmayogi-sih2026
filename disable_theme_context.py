@@ -1,4 +1,7 @@
-// ==============================================================================
+import sys
+
+file_path = 'frontend/src/context/ThemeContext.tsx'
+new_context = '''// ==============================================================================
 // AI KARMAYOGI - THEME CONTEXT PROVIDER
 // Dark & Light Mode Toggle with LocalStorage Persistence
 // ==============================================================================
@@ -46,3 +49,8 @@ export const useTheme = () => {
   }
   return context;
 };
+'''
+
+with open(file_path, 'w', encoding='utf-8') as f:
+    f.write(new_context)
+print("ThemeContext disabled.")
