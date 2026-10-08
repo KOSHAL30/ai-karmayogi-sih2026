@@ -8,6 +8,9 @@ import logging
 from collections import defaultdict
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request, status
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
@@ -58,6 +61,8 @@ async def lifespan(app: FastAPI):
     print("[AI Karmayogi] Application shutdown complete.")
 
 # Initialize FastAPI Application
+limiter = Limiter(key_func=get_remote_address)
+
 app = FastAPI(
     title=settings.PROJECT_NAME,
     description="Sovereign AI-Enabled Capacity Building & Competency Diagnostic Platform for Mission Karmayogi (SIH26101)",
@@ -67,6 +72,9 @@ app = FastAPI(
     redoc_url="/api/v1/redoc",
     openapi_url="/api/v1/openapi.json",
 )
+
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 # Configure Cross-Origin Resource Sharing (CORS)
 app.add_middleware(

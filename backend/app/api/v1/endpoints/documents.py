@@ -8,7 +8,7 @@ from fastapi import APIRouter, Depends, HTTPException, status, File, UploadFile,
 from pydantic import BaseModel
 
 from app.core.config import settings
-from app.core.deps import get_current_user_payload
+from app.core.deps import get_current_user_payload, RequireTrainer
 from app.core.database import get_db
 from app.schemas.common import APIResponse
 from app.schemas.document import (
@@ -50,7 +50,7 @@ async def upload_document(
     file: UploadFile = File(...),
     document_type: str = Form("OM"),
     ministry: Optional[str] = Form(None),
-    payload: dict = Depends(get_current_user_payload),
+    user = RequireTrainer,
     db = Depends(get_db)
 ):
     """
@@ -167,7 +167,7 @@ def recursive_vars(obj):
 
 @router.get("", response_model=APIResponse[list])
 async def get_documents(
-    payload: dict = Depends(get_current_user_payload),
+    user = RequireTrainer,
     db = Depends(get_db)
 ):
     repo = DocumentRepository(db)
@@ -178,7 +178,7 @@ async def get_documents(
 @router.get("/{document_id}", response_model=APIResponse[DocumentResponse])
 async def get_document(
     document_id: str,
-    payload: dict = Depends(get_current_user_payload),
+    user = RequireTrainer,
     db = Depends(get_db)
 ):
     repo = DocumentRepository(db)
@@ -190,7 +190,7 @@ async def get_document(
 @router.delete("/{document_id}", response_model=APIResponse[dict])
 async def delete_document(
     document_id: str,
-    payload: dict = Depends(get_current_user_payload),
+    user = RequireTrainer,
     db = Depends(get_db)
 ):
     repo = DocumentRepository(db)
@@ -213,7 +213,7 @@ async def delete_document(
 @router.get("/{document_id}/summary", response_model=APIResponse[DocumentSummaryResponse])
 async def get_document_summary(
     document_id: str,
-    payload: dict = Depends(get_current_user_payload),
+    user = RequireTrainer,
     db = Depends(get_db)
 ):
     repo = DocumentRepository(db)
@@ -249,7 +249,7 @@ async def get_document_summary(
 @rag_router.post("/query", response_model=APIResponse[RAGQueryResponse])
 async def query_rag(
     request: RAGQueryRequest,
-    payload: dict = Depends(get_current_user_payload),
+    user = RequireTrainer,
     db = Depends(get_db)
 ):
     """
@@ -300,7 +300,7 @@ async def query_rag(
 @mcq_router.post("/generate", response_model=APIResponse[MCQGenerateResponse])
 async def generate_mcqs(
     request: MCQGenerateRequest,
-    payload: dict = Depends(get_current_user_payload),
+    user = RequireTrainer,
     db = Depends(get_db)
 ):
     """
@@ -353,7 +353,7 @@ async def generate_mcqs(
 async def update_draft_mcq(
     question_id: str,
     request: MCQUpdateRequest,
-    payload: dict = Depends(get_current_user_payload)
+    user = RequireTrainer
 ):
     """
     Allows Trainer to modify stem, options, difficulty, Bloom level, or citations.
@@ -385,7 +385,7 @@ async def update_draft_mcq(
 @mcq_router.post("/publish", response_model=APIResponse[MCQPublishResponse])
 async def publish_mcqs(
     request: MCQPublishRequest,
-    payload: dict = Depends(get_current_user_payload),
+    user = RequireTrainer,
     db = Depends(get_db)
 ):
     """

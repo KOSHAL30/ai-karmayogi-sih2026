@@ -44,7 +44,7 @@ export const DEMO_PERSONAS: Record<string, { email: string; name: string; title:
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [state, setState] = useState<AuthState>({
     user: null,
-    token: localStorage.getItem('karmayogi_token'),
+    token: null,
     isAuthenticated: false,
     isLoading: true,
   });
@@ -60,8 +60,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       });
     } catch (err) {
       console.warn('Session expired or invalid token. Resetting...');
-      localStorage.removeItem('karmayogi_token');
-      localStorage.removeItem('karmayogi_refresh_token');
+      
+      
       setState({
         user: null,
         token: null,
@@ -72,7 +72,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   useEffect(() => {
-    const token = localStorage.getItem('karmayogi_token');
+    const token = null;
     if (!token) {
       setState((prev) => ({ ...prev, isLoading: false, isAuthenticated: false, user: null }));
       return;
@@ -88,9 +88,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         password,
       });
 
-      localStorage.setItem('karmayogi_token', res.access_token);
+      
       if (res.refresh_token) {
-        localStorage.setItem('karmayogi_refresh_token', res.refresh_token);
+        
       }
       setState({
         user: res.user,
@@ -105,8 +105,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const logout = () => {
-    localStorage.removeItem('karmayogi_token');
-    localStorage.removeItem('karmayogi_refresh_token');
+    
+    
     setState({
       user: null,
       token: null,
@@ -116,10 +116,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const refreshProfile = async () => {
-    const token = localStorage.getItem('karmayogi_token');
-    if (token) {
-      await fetchProfile(token);
-    }
+    await fetchProfile();
   };
 
   const switchPersona = async (role: UserRole) => {

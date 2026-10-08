@@ -8,6 +8,7 @@ import uuid
 from typing import Annotated, Callable
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from fastapi import Request
 from app.core.database import get_db
 from app.core.security import decode_access_token
 from repositories.user_repository import UserRepository
@@ -18,18 +19,29 @@ security = HTTPBearer(auto_error=True)
 
 
 async def get_current_user_payload(
-    credentials: Annotated[HTTPAuthorizationCredentials, Depends(security)]
+    request: Request
 ) -> dict:
     """
-    Validates the Bearer JWT and extracts the user claims payload.
+    Validates the JWT from HttpOnly cookies and extracts the user claims payload.
     """
-    token = credentials.credentials
+    token = request.cookies.get("access_token")
+    if not token:
+        # Fallback to Bearer for programmatic API access
+        auth_header = request.headers.get("Authorization")
+        if auth_header and auth_header.startswith("Bearer "):
+            token = auth_header.split(" ")[1]
+            
+    if not token:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Missing authentication token. Please log in.",
+        )
+        
     payload = decode_access_token(token)
     if not payload:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Session expired or invalid access token. Please re-authenticate.",
-            headers={"WWW-Authenticate": "Bearer"},
         )
     return payload
 

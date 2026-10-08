@@ -3,7 +3,8 @@
 # Login, Registration, Token Lifecycle, and Logout Endpoints
 # ==============================================================================
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, Response, Request
+from app.main import limiter
 from app.core.database import get_db
 from app.core.deps import get_current_user_payload
 from app.schemas.common import APIResponse
@@ -58,18 +59,40 @@ async def register(
         )
 
 @router.post("/login", response_model=APIResponse[LoginResponseData])
+@limiter.limit("5/minute")
 async def login(
+    request: Request,
     data: LoginRequest,
+    response: Response,
     db = Depends(get_db)
 ):
     """
-    Authenticates an official and issues signed JWT access and refresh tokens.
+    Authenticates an official and issues signed JWT access and refresh tokens via HttpOnly cookies.
     """
     service = AuthService(db)
     login_data = await service.login(
         email=data.email,
         password=data.password
     )
+    
+    # Issue Secure HttpOnly Cookies
+    response.set_cookie(
+        key="access_token",
+        value=login_data.access_token,
+        httponly=True,
+        secure=True,
+        samesite="none",
+        max_age=3600 # 1 hour
+    )
+    response.set_cookie(
+        key="refresh_token",
+        value=login_data.refresh_token,
+        httponly=True,
+        secure=True,
+        samesite="none",
+        max_age=604800 # 7 days
+    )
+    
     return APIResponse(
         status="success",
         data=login_data,

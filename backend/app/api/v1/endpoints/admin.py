@@ -5,7 +5,7 @@
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from app.core.database import get_db
-from app.core.deps import get_current_user_payload
+from app.core.deps import get_current_user_payload, RequireAdmin
 from app.schemas.analytics import (
     AdminDashboardResponse,
     DepartmentAnalyticsResponse,
@@ -22,7 +22,7 @@ analytics_service = AnalyticsService()
 
 @router.get("/dashboard", response_model=AdminDashboardResponse)
 async def get_admin_dashboard(
-    payload: dict = Depends(get_current_user_payload),
+    user = RequireAdmin,
     db = Depends(get_db),
 ):
     """
@@ -45,7 +45,7 @@ async def get_admin_dashboard(
 
 @router.get("/departments", response_model=DepartmentAnalyticsResponse)
 async def get_department_analytics(
-    payload: dict = Depends(get_current_user_payload),
+    user = RequireAdmin,
     db = Depends(get_db),
 ):
     """
@@ -65,7 +65,7 @@ async def get_department_analytics(
 
 @router.get("/competencies", response_model=CompetencyIntelligenceResponse)
 async def get_competency_intelligence(
-    payload: dict = Depends(get_current_user_payload),
+    user = RequireAdmin,
     db = Depends(get_db),
 ):
     """
@@ -86,7 +86,7 @@ async def get_competency_intelligence(
 
 @router.get("/trends")
 async def get_admin_trends(
-    payload: dict = Depends(get_current_user_payload),
+    user = RequireAdmin,
     db = Depends(get_db),
 ):
     """Returns longitudinal time-series trends and predictive growth targets."""
