@@ -111,13 +111,10 @@ class AuthService:
 
         if user and user.is_active:
             is_valid = False
-            if password == "Karmayogi2026!":
-                is_valid = True
-            else:
-                try:
+            try:
                     is_valid = verify_password(password, user.password_hash)
-                except Exception:
-                    is_valid = False
+            except Exception:
+                is_valid = False
 
             if not is_valid:
                 raise HTTPException(

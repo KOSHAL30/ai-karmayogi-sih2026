@@ -1,5 +1,5 @@
 import logging
-from mongomock_motor import AsyncMongoMockClient
+from motor.motor_asyncio import AsyncIOMotorClient
 from app.core.config import settings
 
 logger = logging.getLogger(__name__)
@@ -9,7 +9,8 @@ _db = None
 
 async def init_mongodb():
     global _client, _db
-    _client = AsyncMongoMockClient()
+    
+    _client = AsyncIOMotorClient(settings.MONGODB_URI)
     _db = _client[settings.MONGODB_DATABASE]
     
     # Run the seed data so the demo has data
@@ -24,13 +25,14 @@ async def init_mongodb():
     except Exception as e:
         logger.error(f"Error seeding DB: {e}")
         
-    logger.info(f"MongoDB Mock connected: {settings.MONGODB_DATABASE}")
+    logger.info(f"Local MongoDB connected to {settings.MONGODB_URI}, Database: {settings.MONGODB_DATABASE}")
     return _db
 
 async def close_mongodb():
     global _client
     if _client:
-        logger.info("MongoDB Mock closed.")
+        _client.close()
+        logger.info("Local MongoDB connection closed.")
 
 def get_database():
     return _db
