@@ -113,7 +113,7 @@ export const Profile: React.FC = () => {
       {/* Header Banner */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-slate-200  pb-6">
         <div>
-          <h1 className="text-2xl font-extrabold tracking-tight text-slate-900 ">
+          <h1 className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 ">
             Officer Profile & Credentials
           </h1>
           <p className="text-sm text-slate-500  mt-1">
@@ -133,7 +133,7 @@ export const Profile: React.FC = () => {
         <div className="lg:col-span-1 space-y-6">
           <Card className="border-slate-200  shadow-sm">
             <CardHeader className="text-center pb-2">
-              <div className="mx-auto h-20 w-20 rounded-full bg-gradient-to-tr from-emerald-600 to-emerald-400 flex items-center justify-center text-slate-900 text-2xl font-bold shadow-md shadow-emerald-600/20 mb-3">
+              <div className="mx-auto h-20 w-20 rounded-full bg-gradient-to-tr from-emerald-600 to-emerald-400 flex items-center justify-center text-slate-900 dark:text-slate-100 text-2xl font-bold shadow-md shadow-emerald-600/20 mb-3">
                 {user?.full_name
                   ? user.full_name
                       .split(' ')
@@ -153,7 +153,7 @@ export const Profile: React.FC = () => {
                   <span className="text-slate-500 flex items-center gap-1.5">
                     <UserIcon className="h-3.5 w-3.5" /> Official Role
                   </span>
-                  <span className="font-semibold capitalize text-slate-900 ">
+                  <span className="font-semibold capitalize text-slate-900 dark:text-slate-100 ">
                     {user?.role}
                   </span>
                 </div>
@@ -162,7 +162,7 @@ export const Profile: React.FC = () => {
                   <span className="text-slate-500 flex items-center gap-1.5">
                     <Building className="h-3.5 w-3.5" /> Cadre / Ministry
                   </span>
-                  <span className="font-semibold text-slate-900  max-w-[150px] truncate text-right">
+                  <span className="font-semibold text-slate-900 dark:text-slate-100  max-w-[150px] truncate text-right">
                     {user?.department}
                   </span>
                 </div>
@@ -171,7 +171,7 @@ export const Profile: React.FC = () => {
                   <span className="text-slate-500 flex items-center gap-1.5">
                     <Briefcase className="h-3.5 w-3.5" /> Work Role
                   </span>
-                  <span className="font-semibold text-slate-900  max-w-[150px] truncate text-right">
+                  <span className="font-semibold text-slate-900 dark:text-slate-100  max-w-[150px] truncate text-right">
                     {user?.work_role || 'General Officer'}
                   </span>
                 </div>
@@ -246,7 +246,7 @@ export const Profile: React.FC = () => {
                 <div className="space-y-1.5">
                   <Label htmlFor="profileEmail">Official Email (Locked)</Label>
                   <Input id="profileEmail" value={user?.email || ''} disabled />
-                  <p className="text-[11px] text-slate-600">
+                  <p className="text-[11px] text-slate-600 dark:text-slate-300">
                     Email updates require verified departmental administrative clearance.
                   </p>
                 </div>
@@ -334,7 +334,7 @@ export const Profile: React.FC = () => {
 
                 {newPassword && (
                   <div className="rounded-lg bg-slate-50 /50 p-3 text-[11px] space-y-1 border border-slate-200 ">
-                    <p className="font-semibold text-slate-600 ">Security Requirement Checklist:</p>
+                    <p className="font-semibold text-slate-600 dark:text-slate-300 ">Security Requirement Checklist:</p>
                     <div className="grid grid-cols-2 gap-1 text-slate-500 ">
                       <span className={hasMinLength ? 'text-teal-600 font-medium' : ''}>
                         {hasMinLength ? '✓' : '•'} 8+ characters

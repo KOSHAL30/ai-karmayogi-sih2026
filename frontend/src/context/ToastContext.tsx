@@ -114,7 +114,7 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
           <div
             key={t.id}
             role="status"
-            className={`pointer-events-auto flex items-start gap-3 p-3.5 rounded-2xl border backdrop-blur-md shadow-xl text-slate-900  transition-all animate-in slide-in-from-bottom-3 duration-200 ${getBorderColor(
+            className={`pointer-events-auto flex items-start gap-3 p-3.5 rounded-2xl border backdrop-blur-md shadow-xl text-slate-900 dark:text-slate-100  transition-all animate-in slide-in-from-bottom-3 duration-200 ${getBorderColor(
               t.type
             )}`}
           >
@@ -122,14 +122,14 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             <div className="flex-1 space-y-0.5 text-xs">
               <p className="font-bold leading-tight">{t.title}</p>
               {t.description && (
-                <p className="text-[11px] text-slate-600  leading-relaxed">
+                <p className="text-[11px] text-slate-600 dark:text-slate-300  leading-relaxed">
                   {t.description}
                 </p>
               )}
             </div>
             <button
               onClick={() => removeToast(t.id)}
-              className="p-1 rounded-lg text-slate-600 hover:text-slate-700  transition-colors shrink-0">
+              className="p-1 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-700  transition-colors shrink-0">
               aria-label="Dismiss notification"
             
               <X className="h-3.5 w-3.5" />

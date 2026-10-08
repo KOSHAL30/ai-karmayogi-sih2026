@@ -29,7 +29,7 @@ export const SkillForecast: React.FC<SkillForecastProps> = ({ forecast }) => {
             <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-50 text-teal-600 /60 ">
               <TrendingUp className="h-4 w-4" />
             </div>
-            <h3 className="text-base font-semibold text-slate-900 ">
+            <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100 ">
               Skill Improvement Forecast
             </h3>
             <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-semibold text-emerald-800 /60 ">
@@ -83,12 +83,12 @@ export const SkillForecast: React.FC<SkillForecastProps> = ({ forecast }) => {
                   <span className="text-slate-500 ">
                     Current: <strong className="text-slate-800 ">Level {data.current_level}</strong>
                   </span>
-                  <ArrowRight className="h-3 w-3 text-slate-600" />
+                  <ArrowRight className="h-3 w-3 text-slate-600 dark:text-slate-300" />
                   <span className={text}>
                     Predicted: <strong>Level {data.predicted_level}</strong> ({data.uplift})
                   </span>
-                  <span className="text-slate-600">|</span>
-                  <span className="flex items-center gap-1 text-slate-600 ">
+                  <span className="text-slate-600 dark:text-slate-300">|</span>
+                  <span className="flex items-center gap-1 text-slate-600 dark:text-slate-300 ">
                     <Target className="h-3 w-3 text-teal-600" />
                     Mandated: Level {data.mandated_target}
                   </span>
@@ -115,7 +115,7 @@ export const SkillForecast: React.FC<SkillForecastProps> = ({ forecast }) => {
                 />
               </div>
 
-              <div className="mt-1.5 flex justify-between text-[10px] text-slate-600">
+              <div className="mt-1.5 flex justify-between text-[10px] text-slate-600 dark:text-slate-300">
                 <span>Level 1 (Novice)</span>
                 <span>Level 2</span>
                 <span>Level 3</span>

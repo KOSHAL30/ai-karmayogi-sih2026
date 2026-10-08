@@ -65,7 +65,7 @@ export const CertificateCard: React.FC<CertificateCardProps> = ({
               <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${badge.bg}`}>
                 {badge.label}
               </span>
-              <p className="text-[10px] font-mono text-slate-600 mt-1">
+              <p className="text-[10px] font-mono text-slate-600 dark:text-slate-300 mt-1">
                 {certificate.certificate_number}
               </p>
             </div>
@@ -79,7 +79,7 @@ export const CertificateCard: React.FC<CertificateCardProps> = ({
 
         {/* Certificate Title */}
         <div>
-          <h4 className="text-sm font-extrabold text-slate-900  line-clamp-2 leading-snug group-hover:text-teal-600 :text-teal-700 transition-colors">
+          <h4 className="text-sm font-extrabold text-slate-900 dark:text-slate-100  line-clamp-2 leading-snug group-hover:text-teal-600 :text-teal-700 transition-colors">
             {certificate.title}
           </h4>
           <p className="text-xs text-slate-500  mt-1">
@@ -88,13 +88,13 @@ export const CertificateCard: React.FC<CertificateCardProps> = ({
         </div>
 
         {/* Authority & Ministry */}
-        <div className="p-2.5 rounded-xl bg-slate-50 /50 border border-slate-100  text-[11px] text-slate-600  space-y-1">
+        <div className="p-2.5 rounded-xl bg-slate-50 /50 border border-slate-100  text-[11px] text-slate-600 dark:text-slate-300  space-y-1">
           <div className="flex items-center gap-1.5 truncate">
-            <Building className="h-3.5 w-3.5 text-slate-600 shrink-0" />
+            <Building className="h-3.5 w-3.5 text-slate-600 dark:text-slate-300 shrink-0" />
             <span className="truncate">{certificate.department} • {certificate.ministry}</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <Calendar className="h-3.5 w-3.5 text-slate-600 shrink-0" />
+            <Calendar className="h-3.5 w-3.5 text-slate-600 dark:text-slate-300 shrink-0" />
             <span>Issued: {new Date(certificate.issued_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
           </div>
         </div>
@@ -105,7 +105,7 @@ export const CertificateCard: React.FC<CertificateCardProps> = ({
           <button
             onClick={handleCopyLink}
             title="Copy Public Verification Link"
-            className="text-slate-600 hover:text-teal-600  transition-colors"
+            className="text-slate-600 dark:text-slate-300 hover:text-teal-600  transition-colors"
           >
             {copied ? <Check className="h-3.5 w-3.5 text-teal-600" /> : <Copy className="h-3.5 w-3.5" />}
           </button>
@@ -118,7 +118,7 @@ export const CertificateCard: React.FC<CertificateCardProps> = ({
           variant="outline"
           size="sm"
           onClick={handleCopyLink}
-          className="text-xs text-slate-600  flex items-center gap-1 flex-1"
+          className="text-xs text-slate-600 dark:text-slate-300  flex items-center gap-1 flex-1"
         >
           <ExternalLink className="h-3 w-3" />
           <span>Verify</span>

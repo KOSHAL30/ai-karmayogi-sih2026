@@ -45,10 +45,10 @@ export const WeeklyTimeline: React.FC<WeeklyTimelineProps> = ({
             {/* Node Icon */}
             <div className={`absolute top-1 left-0 flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full text-xs font-bold shadow-sm ${
               isCompleted 
-                ? 'bg-indigo-500 text-slate-900' 
+                ? 'bg-indigo-500 text-slate-900 dark:text-slate-100' 
                 : isCurrent 
-                ? 'bg-indigo-500 text-slate-900 ring-4 ring-emerald-100 ' 
-                : 'bg-slate-200 text-slate-600  '
+                ? 'bg-indigo-500 text-slate-900 dark:text-slate-100 ring-4 ring-emerald-100 ' 
+                : 'bg-slate-200 text-slate-600 dark:text-slate-300  '
             }`}>
               {isCompleted ? <CheckCircle2 className="h-4 w-4" /> : milestone.week_number}
             </div>
@@ -61,12 +61,12 @@ export const WeeklyTimeline: React.FC<WeeklyTimelineProps> = ({
                     <span className="rounded bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700 /60 ">
                       Milestone {milestone.week_number}
                     </span>
-                    <h3 className="text-base font-bold text-slate-900 ">
+                    <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 ">
                       {milestone.title}
                     </h3>
                   </div>
 
-                  <p className="mt-1.5 text-xs text-slate-600 ">
+                  <p className="mt-1.5 text-xs text-slate-600 dark:text-slate-300 ">
                     {milestone.focus}
                   </p>
                 </div>
@@ -88,7 +88,7 @@ export const WeeklyTimeline: React.FC<WeeklyTimelineProps> = ({
               {milestone.practice_quiz && (
                 <div className="mt-4 flex flex-col justify-between gap-3 rounded-lg border border-amber-200/80 bg-amber-50/60 p-3.5 sm:flex-row sm:items-center  /20">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500 text-slate-900 shadow-sm">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500 text-slate-900 dark:text-slate-100 shadow-sm">
                       <HelpCircle className="h-4 w-4" />
                     </div>
                     <div>
@@ -107,7 +107,7 @@ export const WeeklyTimeline: React.FC<WeeklyTimelineProps> = ({
 
                   <button
                     onClick={() => navigate('/assessment/take')}
-                    className="flex items-center justify-center gap-1 rounded-lg bg-amber-600 px-3 py-1.5 text-xs font-semibold text-slate-900 shadow-sm transition hover:bg-amber-700 active:scale-95"
+                    className="flex items-center justify-center gap-1 rounded-lg bg-amber-600 px-3 py-1.5 text-xs font-semibold text-slate-900 dark:text-slate-100 shadow-sm transition hover:bg-amber-700 active:scale-95"
                   >
                     <span>Start Practice Drill</span>
                     <ArrowRight className="h-3 w-3" />

@@ -140,7 +140,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
               <span className="absolute -top-1 -right-1 h-2 w-2 rounded-full bg-rose-500 animate-pulse" />
             )}
           </div>
-          <h3 className="text-xs font-bold text-slate-900 ">
+          <h3 className="text-xs font-bold text-slate-900 dark:text-slate-100 ">
             Administrative Notification Center
           </h3>
           {unreadCount > 0 && (
@@ -162,7 +162,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
           {onClose && (
             <button
               onClick={onClose}
-              className="p-1 rounded-lg text-slate-600 hover:text-slate-600"
+              className="p-1 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-600 dark:text-slate-300"
             >
               <X className="h-4 w-4" />
             </button>
@@ -176,8 +176,8 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
           onClick={() => setFilter('all')}
           className={`px-2.5 py-1 rounded-lg font-medium transition-colors ${
             filter === 'all'
-              ? 'bg-slate-200  text-slate-900  font-bold'
-              : 'text-slate-500 hover:text-slate-900'
+              ? 'bg-slate-200  text-slate-900 dark:text-slate-100  font-bold'
+              : 'text-slate-500 hover:text-slate-900 dark:text-slate-100'
           }`}
         >
           All ({notifications.length})
@@ -186,8 +186,8 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
           onClick={() => setFilter('unread')}
           className={`px-2.5 py-1 rounded-lg font-medium transition-colors ${
             filter === 'unread'
-              ? 'bg-slate-200  text-slate-900  font-bold'
-              : 'text-slate-500 hover:text-slate-900'
+              ? 'bg-slate-200  text-slate-900 dark:text-slate-100  font-bold'
+              : 'text-slate-500 hover:text-slate-900 dark:text-slate-100'
           }`}
         >
           Unread ({unreadCount})
@@ -196,8 +196,8 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
           onClick={() => setFilter('urgent')}
           className={`px-2.5 py-1 rounded-lg font-medium transition-colors ${
             filter === 'urgent'
-              ? 'bg-slate-200  text-slate-900  font-bold'
-              : 'text-slate-500 hover:text-slate-900'
+              ? 'bg-slate-200  text-slate-900 dark:text-slate-100  font-bold'
+              : 'text-slate-500 hover:text-slate-900 dark:text-slate-100'
           }`}
         >
           Urgent / High
@@ -207,10 +207,10 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
       {/* Notifications List */}
       <div className="flex-1 overflow-y-auto divide-y divide-slate-100 ">
         {isLoading ? (
-          <div className="py-12 text-center text-xs text-slate-600">Loading alerts...</div>
+          <div className="py-12 text-center text-xs text-slate-600 dark:text-slate-300">Loading alerts...</div>
         ) : filteredNotes.length === 0 ? (
-          <div className="py-12 text-center text-xs text-slate-600 space-y-1">
-            <CheckCircle2 className="h-6 w-6 text-slate-600  mx-auto mb-1" />
+          <div className="py-12 text-center text-xs text-slate-600 dark:text-slate-300 space-y-1">
+            <CheckCircle2 className="h-6 w-6 text-slate-600 dark:text-slate-300  mx-auto mb-1" />
             <p>You're all caught up!</p>
             <p className="text-[10px]">No notifications matching your filter.</p>
           </div>
@@ -234,7 +234,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                 </div>
 
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[10px] text-slate-600 flex items-center gap-1">
+                  <span className="text-[10px] text-slate-600 dark:text-slate-300 flex items-center gap-1">
                     <Clock className="h-2.5 w-2.5" />
                     {new Date(note.created_at).toLocaleDateString('en-IN', { month: 'short', day: 'numeric' })}
                   </span>
@@ -242,7 +242,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                     <button
                       onClick={(e) => handleMarkAsRead(note.id, e)}
                       title="Mark as read"
-                      className="p-1 text-slate-600 hover:text-teal-600"
+                      className="p-1 text-slate-600 dark:text-slate-300 hover:text-teal-600"
                     >
                       <Check className="h-3 w-3" />
                     </button>
@@ -250,7 +250,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                 </div>
               </div>
 
-              <h4 className={`text-xs ${!note.is_read ? 'font-bold text-slate-900 ' : 'font-medium text-slate-700 '}`}>
+              <h4 className={`text-xs ${!note.is_read ? 'font-bold text-slate-900 dark:text-slate-100 ' : 'font-medium text-slate-700 '}`}>
                 {note.title}
               </h4>
 

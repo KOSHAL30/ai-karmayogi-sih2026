@@ -87,13 +87,13 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
         <div className="flex items-center justify-between pb-3 border-b border-slate-100 ">
           <div className="flex items-center gap-2">
             <Edit3 className="h-5 w-5 text-teal-600" />
-            <h3 className="text-sm font-bold text-slate-900 ">
+            <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 ">
               Human Review & Editorial Studio
             </h3>
           </div>
           <button
             onClick={onCancel}
-            className="p-1 rounded-lg text-slate-600 hover:text-slate-600"
+            className="p-1 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-600 dark:text-slate-300"
           >
             <X className="h-4 w-4" />
           </button>
@@ -110,7 +110,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
               value={stem}
               onChange={(e) => setStem(e.target.value)}
               required
-              className="w-full text-xs px-3 py-2 rounded-xl border border-slate-300  bg-white  text-slate-900  focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full text-xs px-3 py-2 rounded-xl border border-slate-300  bg-white  text-slate-900 dark:text-slate-100  focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
 
@@ -123,7 +123,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
               <select
                 value={bloom}
                 onChange={(e) => setBloom(e.target.value as BloomLevel)}
-                className="w-full text-xs px-3 py-2 rounded-lg border border-slate-300  bg-white  text-slate-900 "
+                className="w-full text-xs px-3 py-2 rounded-lg border border-slate-300  bg-white  text-slate-900 dark:text-slate-100 "
               >
                 {BLOOM_LEVELS.map((b) => (
                   <option key={b} value={b}>
@@ -140,7 +140,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
               <select
                 value={difficulty}
                 onChange={(e) => setDifficulty(e.target.value as DifficultyTier)}
-                className="w-full text-xs px-3 py-2 rounded-lg border border-slate-300  bg-white  text-slate-900 "
+                className="w-full text-xs px-3 py-2 rounded-lg border border-slate-300  bg-white  text-slate-900 dark:text-slate-100 "
               >
                 {DIFFICULTY_TIERS.map((d) => (
                   <option key={d} value={d}>
@@ -173,7 +173,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
                     onChange={() => handleSetCorrectOption(opt.id)}
                     className="text-teal-600 focus:ring-emerald-500"
                   />
-                  <span className="font-bold text-slate-600  w-5">
+                  <span className="font-bold text-slate-600 dark:text-slate-300  w-5">
                     {String.fromCharCode(65 + idx)}.
                   </span>
                   <input
@@ -181,7 +181,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
                     value={opt.option_text}
                     onChange={(e) => handleOptionTextChange(opt.id, e.target.value)}
                     required
-                    className="flex-1 text-xs px-3 py-1.5 rounded-lg border border-slate-300  bg-white  text-slate-900 "
+                    className="flex-1 text-xs px-3 py-1.5 rounded-lg border border-slate-300  bg-white  text-slate-900 dark:text-slate-100 "
                   />
                   {opt.is_correct && (
                     <span className="text-[10px] font-bold text-teal-600  bg-emerald-100  px-2 py-0.5 rounded-full border border-emerald-300 ">
@@ -196,7 +196,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
                     value={opt.distractor_rationale || ''}
                     onChange={(e) => handleRationaleChange(opt.id, e.target.value)}
                     placeholder="Pedagogical distractor rationale..."
-                    className="w-full text-[11px] px-2.5 py-1 rounded border border-slate-200  bg-white/80 /60 text-slate-600  italic"
+                    className="w-full text-[11px] px-2.5 py-1 rounded border border-slate-200  bg-white/80 /60 text-slate-600 dark:text-slate-300  italic"
                   />
                 </div>
               </div>
@@ -212,7 +212,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
               rows={2}
               value={explanation}
               onChange={(e) => setExplanation(e.target.value)}
-              className="w-full text-xs px-3 py-2 rounded-xl border border-slate-300  bg-white  text-slate-900 "
+              className="w-full text-xs px-3 py-2 rounded-xl border border-slate-300  bg-white  text-slate-900 dark:text-slate-100 "
             />
           </div>
 
@@ -225,7 +225,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
               type="text"
               value={citation}
               onChange={(e) => setCitation(e.target.value)}
-              className="w-full text-xs px-3 py-2 rounded-lg border border-slate-300  bg-white  text-slate-900  font-mono"
+              className="w-full text-xs px-3 py-2 rounded-lg border border-slate-300  bg-white  text-slate-900 dark:text-slate-100  font-mono"
             />
           </div>
 

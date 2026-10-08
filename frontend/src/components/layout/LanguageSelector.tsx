@@ -78,8 +78,8 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
         title={`Change Language (Current: ${activeOption.nativeName})`}
         className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-150 ${
           isOpen
-            ? 'bg-slate-200  text-slate-900  ring-2 ring-emerald-500/20'
-            : 'text-slate-600  hover:bg-slate-100  hover:text-slate-900'
+            ? 'bg-slate-200  text-slate-900 dark:text-slate-100  ring-2 ring-emerald-500/20'
+            : 'text-slate-600 dark:text-slate-300  hover:bg-slate-100  hover:text-slate-900 dark:text-slate-100'
         }`}
       >
         <Globe className="h-4 w-4 text-teal-600  shrink-0" />
@@ -93,7 +93,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
           </span>
         )}
         <ChevronDown
-          className={`h-3 w-3 text-slate-600 transition-transform duration-150 ${
+          className={`h-3 w-3 text-slate-600 dark:text-slate-300 transition-transform duration-150 ${
             isOpen ? 'rotate-180' : ''
           }`}
         />
@@ -106,11 +106,11 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
           <div className="px-3.5 py-2.5 bg-slate-50 /60 border-b border-slate-100  flex items-center justify-between">
             <div className="flex items-center gap-1.5">
               <Globe className="h-3.5 w-3.5 text-teal-600" />
-              <span className="text-xs font-bold text-slate-900 ">
+              <span className="text-xs font-bold text-slate-900 dark:text-slate-100 ">
                 Select Language
               </span>
             </div>
-            <span className="text-[10px] font-mono text-slate-600">
+            <span className="text-[10px] font-mono text-slate-600 dark:text-slate-300">
               8th Schedule
             </span>
           </div>
@@ -134,7 +134,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                     <span className="text-xs font-medium group-hover:text-teal-600 :text-teal-700">
                       {lang.nativeName}
                     </span>
-                    <span className="text-[10px] text-slate-600 ">
+                    <span className="text-[10px] text-slate-600 dark:text-slate-300 ">
                       {lang.name} • {lang.region}
                     </span>
                   </div>
@@ -150,7 +150,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
           </div>
 
           {/* Footer Note */}
-          <div className="px-3.5 py-2 bg-slate-50/70 /40 border-t border-slate-100  text-[10px] text-slate-600">
+          <div className="px-3.5 py-2 bg-slate-50/70 /40 border-t border-slate-100  text-[10px] text-slate-600 dark:text-slate-300">
             Bhashini Indic AI translation integration ready
           </div>
         </div>

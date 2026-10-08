@@ -111,7 +111,7 @@ export const DepartmentAnalytics: React.FC = () => {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8">
       {/* Executive Header Banner */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-50 via-white to-teal-50 p-8 text-slate-900 border border-slate-200 shadow-xl">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-50 via-white to-teal-50 p-8 text-slate-900 dark:text-slate-100 border border-slate-200 shadow-xl">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 rounded-full bg-indigo-500/20 px-3 py-0.5 text-xs font-semibold text-teal-700 border border-teal-200">
@@ -121,7 +121,7 @@ export const DepartmentAnalytics: React.FC = () => {
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
               Departmental Competency Analytics
             </h1>
-            <p className="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
               Real-time monitoring across 12 Central Government departments and 3 key ministries. Evaluate
               capacity benchmarks, cross-pillar deficit distributions, and cadre progress.
             </p>
@@ -131,7 +131,7 @@ export const DepartmentAnalytics: React.FC = () => {
             <Link to="/admin">
               <Button
                 variant="outline"
-                className="bg-white/60 border-slate-200 text-slate-600 hover:bg-white text-xs h-9 font-semibold"
+                className="bg-white/60 dark:bg-white/5 border-slate-200 text-slate-600 dark:text-slate-300 hover:bg-white text-xs h-9 font-semibold"
               >
                 Executive Dashboard
               </Button>
@@ -155,7 +155,7 @@ export const DepartmentAnalytics: React.FC = () => {
               <Building2 className="h-4 w-4" />
             </div>
           </div>
-          <div className="text-2xl font-extrabold text-slate-900 ">
+          <div className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 ">
             {data.total_departments}
           </div>
           <p className="text-[11px] text-slate-500">Across 3 Central Line Ministries</p>
@@ -168,7 +168,7 @@ export const DepartmentAnalytics: React.FC = () => {
               <Users className="h-4 w-4" />
             </div>
           </div>
-          <div className="text-2xl font-extrabold text-slate-900 ">
+          <div className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 ">
             {totalOfficers.toLocaleString()}
           </div>
           <p className="text-[11px] text-teal-600  font-semibold">
@@ -183,7 +183,7 @@ export const DepartmentAnalytics: React.FC = () => {
               <TrendingUp className="h-4 w-4" />
             </div>
           </div>
-          <div className="text-2xl font-extrabold text-slate-900 ">
+          <div className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 ">
             {avgCompetency}%
           </div>
           <p className="text-[11px] text-amber-600  font-semibold">
@@ -198,7 +198,7 @@ export const DepartmentAnalytics: React.FC = () => {
               <Award className="h-4 w-4" />
             </div>
           </div>
-          <div className="text-sm font-extrabold text-slate-900  truncate">
+          <div className="text-sm font-extrabold text-slate-900 dark:text-slate-100  truncate">
             {topDept?.department_name || 'Exp. Dept'}
           </div>
           <p className="text-[11px] text-purple-600  font-bold">
@@ -218,7 +218,7 @@ export const DepartmentAnalytics: React.FC = () => {
       <div className="rounded-2xl border border-slate-200  bg-white  p-6 shadow-sm space-y-5">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-100 ">
           <div>
-            <h3 className="text-base font-bold text-slate-900  flex items-center gap-2">
+            <h3 className="text-base font-bold text-slate-900 dark:text-slate-100  flex items-center gap-2">
               <Award className="h-4 w-4 text-teal-600" />
               Central Cadre Performance Leaderboard
             </h3>
@@ -230,13 +230,13 @@ export const DepartmentAnalytics: React.FC = () => {
           {/* Search & Filter Toolbar */}
           <div className="flex flex-wrap items-center gap-3">
             <div className="relative min-w-[200px]">
-              <Search className="h-3.5 w-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-600" />
+              <Search className="h-3.5 w-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300" />
               <input
                 type="text"
                 placeholder="Search department or gap..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-8 pr-3 py-1.5 rounded-lg text-xs bg-slate-50  border border-slate-200  text-slate-900  focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                className="w-full pl-8 pr-3 py-1.5 rounded-lg text-xs bg-slate-50  border border-slate-200  text-slate-900 dark:text-slate-100  focus:outline-none focus:ring-1 focus:ring-emerald-500"
               />
             </div>
 
@@ -247,7 +247,7 @@ export const DepartmentAnalytics: React.FC = () => {
                 className={`px-2.5 py-1 rounded-md font-medium transition-all ${
                   selectedMinistry === 'ALL'
                     ? 'bg-white  text-teal-600  shadow-xs'
-                    : 'text-slate-600  hover:text-slate-900'
+                    : 'text-slate-600 dark:text-slate-300  hover:text-slate-900 dark:text-slate-100'
                 }`}
               >
                 All
@@ -265,7 +265,7 @@ export const DepartmentAnalytics: React.FC = () => {
                     className={`px-2.5 py-1 rounded-md font-medium transition-all ${
                       selectedMinistry === min
                         ? 'bg-white  text-teal-600  shadow-xs'
-                        : 'text-slate-600  hover:text-slate-900'
+                        : 'text-slate-600 dark:text-slate-300  hover:text-slate-900 dark:text-slate-100'
                     }`}
                   >
                     {shortLabel}
@@ -280,7 +280,7 @@ export const DepartmentAnalytics: React.FC = () => {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead>
-              <tr className="border-b border-slate-200  text-slate-600 font-semibold">
+              <tr className="border-b border-slate-200  text-slate-600 dark:text-slate-300 font-semibold">
                 <th
                   onClick={() => handleSort('rank')}
                   className="py-3 px-3 cursor-pointer hover:text-slate-700"
@@ -348,7 +348,7 @@ export const DepartmentAnalytics: React.FC = () => {
 
                   {/* Name & Ministry */}
                   <td className="py-3 px-3">
-                    <span className="font-bold text-slate-900  block">
+                    <span className="font-bold text-slate-900 dark:text-slate-100  block">
                       {dept.department_name}
                     </span>
                     <span className="text-[10px] text-slate-500">
@@ -441,7 +441,7 @@ export const DepartmentAnalytics: React.FC = () => {
                     Rank #{selectedDept.rank} of 12
                   </span>
                 </div>
-                <h3 className="text-lg font-extrabold text-slate-900 ">
+                <h3 className="text-lg font-extrabold text-slate-900 dark:text-slate-100 ">
                   {selectedDept.department_name}
                 </h3>
                 <p className="text-xs text-slate-500">{selectedDept.ministry}</p>
@@ -449,7 +449,7 @@ export const DepartmentAnalytics: React.FC = () => {
 
               <button
                 onClick={() => setSelectedDeptCode(null)}
-                className="p-1 rounded-lg text-slate-600 hover:text-slate-600  hover:bg-slate-100"
+                className="p-1 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-600 dark:text-slate-300  hover:bg-slate-100"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -458,21 +458,21 @@ export const DepartmentAnalytics: React.FC = () => {
             {/* Quick Metrics Grid */}
             <div className="grid grid-cols-3 gap-3">
               <div className="p-3 rounded-xl bg-slate-50 /50 border border-slate-100  text-center">
-                <span className="text-[10px] text-slate-600 block">Total Officers</span>
-                <span className="text-base font-extrabold text-slate-900 ">
+                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">Total Officers</span>
+                <span className="text-base font-extrabold text-slate-900 dark:text-slate-100 ">
                   {selectedDept.officer_count}
                 </span>
               </div>
 
               <div className="p-3 rounded-xl bg-slate-50 /50 border border-slate-100  text-center">
-                <span className="text-[10px] text-slate-600 block">Course Completion</span>
+                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">Course Completion</span>
                 <span className="text-base font-extrabold text-teal-600 ">
                   {selectedDept.completion_pct}%
                 </span>
               </div>
 
               <div className="p-3 rounded-xl bg-slate-50 /50 border border-slate-100  text-center">
-                <span className="text-[10px] text-slate-600 block">Learning Hours</span>
+                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">Learning Hours</span>
                 <span className="text-base font-extrabold text-teal-600 ">
                   {selectedDept.total_hours} hrs
                 </span>
@@ -481,7 +481,7 @@ export const DepartmentAnalytics: React.FC = () => {
 
             {/* 3 Pillar Scorecards */}
             <div className="space-y-2">
-              <h4 className="text-xs font-bold text-slate-900  flex items-center gap-1.5">
+              <h4 className="text-xs font-bold text-slate-900 dark:text-slate-100  flex items-center gap-1.5">
                 <Layers className="h-3.5 w-3.5 text-teal-600" />
                 <span>FRAC Pillar Proficiency Breakdown</span>
               </h4>
@@ -502,7 +502,7 @@ export const DepartmentAnalytics: React.FC = () => {
                       {cell.pillar}
                     </span>
                     <div className="flex items-baseline justify-between mt-1">
-                      <span className="text-lg font-extrabold text-slate-900 ">
+                      <span className="text-lg font-extrabold text-slate-900 dark:text-slate-100 ">
                         {cell.avg_score}%
                       </span>
                       <span
@@ -529,11 +529,11 @@ export const DepartmentAnalytics: React.FC = () => {
             <div className="p-4 rounded-xl bg-slate-50 /40 border border-slate-200  space-y-2">
               <div className="flex items-center gap-2">
                 <AlertTriangle className="h-4 w-4 text-rose-500" />
-                <h5 className="text-xs font-bold text-slate-900 ">
+                <h5 className="text-xs font-bold text-slate-900 dark:text-slate-100 ">
                   Identified Priority Gap: {selectedDept.highest_gap}
                 </h5>
               </div>
-              <p className="text-[11px] text-slate-600  leading-relaxed">
+              <p className="text-[11px] text-slate-600 dark:text-slate-300  leading-relaxed">
                 Officers in {selectedDept.department_name} show elevated deficit in {selectedDept.highest_gap}.
                 Mandating targeted iGOT micro-courses and diagnostic reassessment within 30 days is recommended by the Capacity Building Commission guidelines.
               </p>

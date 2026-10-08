@@ -66,7 +66,7 @@ export const GapSummaryCard: React.FC<GapSummaryCardProps> = ({
             </div>
           </div>
           <div>
-            <div className="text-3xl font-extrabold text-slate-900  tracking-tight">
+            <div className="text-3xl font-extrabold text-slate-900 dark:text-slate-100  tracking-tight">
               {overallScore.toFixed(1)}%
             </div>
             <p className="text-[11px] text-slate-500 mt-1">
@@ -93,7 +93,7 @@ export const GapSummaryCard: React.FC<GapSummaryCardProps> = ({
             </div>
           </div>
           <div>
-            <div className="text-2xl font-extrabold text-slate-900 ">
+            <div className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 ">
               {functionalScore.toFixed(1)}%
             </div>
             <p className="text-[11px] text-slate-500 mt-1">GFR 2017, CSMOP, GeM</p>
@@ -119,7 +119,7 @@ export const GapSummaryCard: React.FC<GapSummaryCardProps> = ({
             </div>
           </div>
           <div>
-            <div className="text-2xl font-extrabold text-slate-900 ">
+            <div className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 ">
               {domainScore.toFixed(1)}%
             </div>
             <p className="text-[11px] text-slate-500 mt-1">RTI Act, Establishment Rules</p>
@@ -145,7 +145,7 @@ export const GapSummaryCard: React.FC<GapSummaryCardProps> = ({
             </div>
           </div>
           <div>
-            <div className="text-2xl font-extrabold text-slate-900 ">
+            <div className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 ">
               {behavioralScore.toFixed(1)}%
             </div>
             <p className="text-[11px] text-slate-500 mt-1">Ethics, Citizen Empathy</p>

@@ -118,7 +118,7 @@ export const RAGChat: React.FC<RAGChatProps> = ({ activeDocument, onCitationClic
             <Sparkles className="h-4 w-4" />
           </div>
           <div>
-            <h3 className="text-xs font-bold text-slate-900  flex items-center gap-1.5">
+            <h3 className="text-xs font-bold text-slate-900 dark:text-slate-100  flex items-center gap-1.5">
               Sovereign RAG Copilot
               <span className="rounded bg-emerald-50  px-1.5 py-0.5 text-[9px] font-bold text-emerald-700  border border-emerald-200 ">
                 Grounded
@@ -131,7 +131,7 @@ export const RAGChat: React.FC<RAGChatProps> = ({ activeDocument, onCitationClic
         </div>
 
         {activeDocument && (
-          <label className="flex items-center gap-2 cursor-pointer text-xs text-slate-600 ">
+          <label className="flex items-center gap-2 cursor-pointer text-xs text-slate-600 dark:text-slate-300 ">
             <input
               type="checkbox"
               checked={scopeToDoc}
@@ -161,7 +161,7 @@ export const RAGChat: React.FC<RAGChatProps> = ({ activeDocument, onCitationClic
             <div
               className={`max-w-[85%] rounded-2xl p-4 text-xs leading-relaxed space-y-2.5 ${
                 msg.sender === 'user'
-                  ? 'bg-indigo-500 text-slate-900 rounded-br-none shadow-sm'
+                  ? 'bg-indigo-500 text-slate-900 dark:text-slate-100 rounded-br-none shadow-sm'
                   : 'bg-slate-50 /80 text-slate-800  border border-slate-200 /80 rounded-bl-none shadow-sm'
               }`}
             >
@@ -183,7 +183,7 @@ export const RAGChat: React.FC<RAGChatProps> = ({ activeDocument, onCitationClic
 
                   {msg.ragData.citations && msg.ragData.citations.length > 0 && (
                     <div className="space-y-1.5 pt-1">
-                      <p className="text-[10px] font-bold text-slate-600  flex items-center gap-1">
+                      <p className="text-[10px] font-bold text-slate-600 dark:text-slate-300  flex items-center gap-1">
                         <BookOpen className="h-3 w-3 text-teal-600" />
                         Statutory Evidence & Rule Citations ({msg.ragData.citations.length})
                       </p>
@@ -233,7 +233,7 @@ export const RAGChat: React.FC<RAGChatProps> = ({ activeDocument, onCitationClic
       {/* Suggested Chips */}
       {messages.length <= 2 && (
         <div className="p-3 border-t border-slate-100  bg-slate-50/40 /40">
-          <p className="text-[10px] font-semibold text-slate-600 uppercase tracking-wider mb-1.5">
+          <p className="text-[10px] font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider mb-1.5">
             Suggested Statutory Queries
           </p>
           <div className="flex flex-wrap gap-1.5">
@@ -269,7 +269,7 @@ export const RAGChat: React.FC<RAGChatProps> = ({ activeDocument, onCitationClic
                 ? `Ask about ${activeDocument.document_title.slice(0, 30)}...`
                 : 'Ask a question grounded in government service rules...'
             }
-            className="flex-1 text-xs px-3.5 py-2.5 rounded-xl border border-slate-300  bg-slate-50  text-slate-900  focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="flex-1 text-xs px-3.5 py-2.5 rounded-xl border border-slate-300  bg-slate-50  text-slate-900 dark:text-slate-100  focus:outline-none focus:ring-2 focus:ring-emerald-500"
           />
           <Button
             type="submit"

@@ -80,7 +80,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ item, onComplete }) => {
         {/* Header Badges */}
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <span className="flex items-center gap-1 rounded-full bg-white px-2.5 py-0.5 text-[11px] font-semibold text-slate-900 ">
+            <span className="flex items-center gap-1 rounded-full bg-white px-2.5 py-0.5 text-[11px] font-semibold text-slate-900 dark:text-slate-100 ">
               Priority #{item.priority}
             </span>
             <span className={`rounded-full border px-2 py-0.5 text-[11px] font-medium ${getPillarBadge(item.competency_type)}`}>
@@ -89,7 +89,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ item, onComplete }) => {
           </div>
 
           <div className="flex items-center gap-1.5 text-xs text-slate-500 ">
-            <Building2 className="h-3.5 w-3.5 text-slate-600" />
+            <Building2 className="h-3.5 w-3.5 text-slate-600 dark:text-slate-300" />
             <span className="truncate max-w-[180px]" title={item.ministry}>
               {item.ministry}
             </span>
@@ -97,7 +97,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ item, onComplete }) => {
         </div>
 
         {/* Title */}
-        <h3 className="mt-3 text-base font-semibold text-slate-900 group-hover:text-teal-600  :text-teal-700">
+        <h3 className="mt-3 text-base font-semibold text-slate-900 dark:text-slate-100 group-hover:text-teal-600  :text-teal-700">
           {item.title}
         </h3>
 
@@ -130,8 +130,8 @@ export const CourseCard: React.FC<CourseCardProps> = ({ item, onComplete }) => {
         {item.tags && item.tags.length > 0 && (
           <div className="mt-2.5 flex flex-wrap gap-1.5">
             {item.tags.slice(0, 3).map((tag, idx) => (
-              <span key={idx} className="flex items-center gap-1 rounded bg-slate-50 px-1.5 py-0.5 text-[10px] text-slate-600 border border-slate-200/60 /40  /60">
-                <Tag className="h-2.5 w-2.5 text-slate-600" />
+              <span key={idx} className="flex items-center gap-1 rounded bg-slate-50 px-1.5 py-0.5 text-[10px] text-slate-600 dark:text-slate-300 border border-slate-200/60 /40  /60">
+                <Tag className="h-2.5 w-2.5 text-slate-600 dark:text-slate-300" />
                 {tag}
               </span>
             ))}
@@ -164,9 +164,9 @@ export const CourseCard: React.FC<CourseCardProps> = ({ item, onComplete }) => {
             <button
               onClick={handleComplete}
               disabled={isCompleting}
-              className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 transition hover:bg-slate-50 hover:text-slate-900 disabled:opacity-50"
+              className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 transition hover:bg-slate-50 hover:text-slate-900 dark:text-slate-100 disabled:opacity-50"
             >
-              <CheckCircle2 className="h-3.5 w-3.5 text-slate-600" />
+              <CheckCircle2 className="h-3.5 w-3.5 text-slate-600 dark:text-slate-300" />
               {isCompleting ? 'Updating...' : 'Mark Done'}
             </button>
           )}

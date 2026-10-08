@@ -58,7 +58,7 @@ export const AssessmentDashboard: React.FC = () => {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8">
       {/* 1. Welcome & Work Role Header */}
-      <div className="rounded-2xl border border-slate-200  bg-gradient-to-r from-indigo-50 via-white to-teal-50 p-8 text-slate-900 shadow-xl flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div className="rounded-2xl border border-slate-200  bg-gradient-to-r from-indigo-50 via-white to-teal-50 p-8 text-slate-900 dark:text-slate-100 shadow-xl flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div className="space-y-2 max-w-2xl">
           <div className="inline-flex items-center gap-2 rounded-full bg-indigo-500/20 px-3 py-1 text-xs font-semibold text-teal-700 border border-teal-200">
             <Compass className="h-3.5 w-3.5 text-teal-700" />
@@ -67,12 +67,12 @@ export const AssessmentDashboard: React.FC = () => {
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
             Welcome, {user?.full_name || 'Officer'}
           </h1>
-          <p className="text-xs sm:text-sm text-slate-600">
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
             {user?.designation} • {user?.department}
           </p>
           <div className="flex flex-wrap items-center gap-2 pt-1 text-xs text-teal-700">
-            <span className="font-semibold text-slate-900">Designated Work Role:</span>
-            <span className="px-2.5 py-0.5 rounded-md bg-emerald-800/60 border border-emerald-700/60 text-slate-900 font-medium">
+            <span className="font-semibold text-slate-900 dark:text-slate-100">Designated Work Role:</span>
+            <span className="px-2.5 py-0.5 rounded-md bg-emerald-800/60 border border-emerald-700/60 text-slate-900 dark:text-slate-100 font-medium">
               {user?.work_role || 'Desk Officer (Administration)'}
             </span>
           </div>
@@ -105,11 +105,11 @@ export const AssessmentDashboard: React.FC = () => {
                 Two-Parameter Logistic (2PL) Item Response Theory calibrated to evaluate latent civil service ability.
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4 text-xs text-slate-600 ">
+            <CardContent className="space-y-4 text-xs text-slate-600 dark:text-slate-300 ">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="rounded-xl border border-slate-200  p-3.5 bg-slate-50/50 /40 space-y-1">
-                  <span className="text-[10px] font-bold text-slate-600 uppercase">Duration</span>
-                  <div className="text-base font-extrabold text-slate-900  flex items-center gap-1.5">
+                  <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase">Duration</span>
+                  <div className="text-base font-extrabold text-slate-900 dark:text-slate-100  flex items-center gap-1.5">
                     <Clock className="h-4 w-4 text-teal-600" />
                     20 Minutes
                   </div>
@@ -117,8 +117,8 @@ export const AssessmentDashboard: React.FC = () => {
                 </div>
 
                 <div className="rounded-xl border border-slate-200  p-3.5 bg-slate-50/50 /40 space-y-1">
-                  <span className="text-[10px] font-bold text-slate-600 uppercase">Item Volume</span>
-                  <div className="text-base font-extrabold text-slate-900  flex items-center gap-1.5">
+                  <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase">Item Volume</span>
+                  <div className="text-base font-extrabold text-slate-900 dark:text-slate-100  flex items-center gap-1.5">
                     <BookOpen className="h-4 w-4 text-teal-600" />
                     10 - 15 Items
                   </div>
@@ -126,7 +126,7 @@ export const AssessmentDashboard: React.FC = () => {
                 </div>
 
                 <div className="rounded-xl border border-slate-200  p-3.5 bg-slate-50/50 /40 space-y-1">
-                  <span className="text-[10px] font-bold text-slate-600 uppercase">Ethos</span>
+                  <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase">Ethos</span>
                   <div className="text-base font-extrabold text-teal-600  flex items-center gap-1.5">
                     <Shield className="h-4 w-4" />
                     Formative
@@ -162,7 +162,7 @@ export const AssessmentDashboard: React.FC = () => {
               <div className="divide-y divide-slate-100  text-xs">
                 <div className="py-2.5 flex items-center justify-between">
                   <div className="space-y-0.5">
-                    <p className="font-bold text-slate-900 ">Public Procurement & GFR 2017</p>
+                    <p className="font-bold text-slate-900 dark:text-slate-100 ">Public Procurement & GFR 2017</p>
                     <p className="text-[11px] text-slate-500">Rule 149 (GeM), Rule 166 (PAC), Financial delegations</p>
                   </div>
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-cyan-100 /60 text-cyan-800  border border-cyan-300">
@@ -172,7 +172,7 @@ export const AssessmentDashboard: React.FC = () => {
 
                 <div className="py-2.5 flex items-center justify-between">
                   <div className="space-y-0.5">
-                    <p className="font-bold text-slate-900 ">Central Secretariat File Management & CSMOP</p>
+                    <p className="font-bold text-slate-900 dark:text-slate-100 ">Central Secretariat File Management & CSMOP</p>
                     <p className="text-[11px] text-slate-500">Noting, drafting, cabinet notes, e-Office audit compliance</p>
                   </div>
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-cyan-100 /60 text-cyan-800  border border-cyan-300">
@@ -182,7 +182,7 @@ export const AssessmentDashboard: React.FC = () => {
 
                 <div className="py-2.5 flex items-center justify-between">
                   <div className="space-y-0.5">
-                    <p className="font-bold text-slate-900 ">Ethical Governance & Conflict of Interest</p>
+                    <p className="font-bold text-slate-900 dark:text-slate-100 ">Ethical Governance & Conflict of Interest</p>
                     <p className="text-[11px] text-slate-500">CCS Conduct Rules 1964, recusal, zero corruption tolerance</p>
                   </div>
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-100 /60 text-purple-800  border border-purple-300">
@@ -192,7 +192,7 @@ export const AssessmentDashboard: React.FC = () => {
 
                 <div className="py-2.5 flex items-center justify-between">
                   <div className="space-y-0.5">
-                    <p className="font-bold text-slate-900 ">Right to Information & Statutory Appeals</p>
+                    <p className="font-bold text-slate-900 dark:text-slate-100 ">Right to Information & Statutory Appeals</p>
                     <p className="text-[11px] text-slate-500">RTI Act Section 8 exemptions, life/liberty timelines, CPIO norms</p>
                   </div>
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-teal-100 /60 text-teal-800  border border-teal-300">
@@ -202,7 +202,7 @@ export const AssessmentDashboard: React.FC = () => {
 
                 <div className="py-2.5 flex items-center justify-between">
                   <div className="space-y-0.5">
-                    <p className="font-bold text-slate-900 ">Citizen-Centric Grievance Redressal</p>
+                    <p className="font-bold text-slate-900 dark:text-slate-100 ">Citizen-Centric Grievance Redressal</p>
                     <p className="text-[11px] text-slate-500">CPGRAMS disposal timelines, speaking orders, qualitative resolution</p>
                   </div>
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-100 /60 text-purple-800  border border-purple-300">
@@ -229,14 +229,14 @@ export const AssessmentDashboard: React.FC = () => {
 
             <CardContent className="space-y-3">
               {loading ? (
-                <div className="py-8 text-center text-xs text-slate-600">Loading evaluation history...</div>
+                <div className="py-8 text-center text-xs text-slate-600 dark:text-slate-300">Loading evaluation history...</div>
               ) : history.length === 0 ? (
                 <div className="rounded-xl border border-dashed border-slate-200  p-6 text-center space-y-2">
-                  <Compass className="h-8 w-8 text-slate-600  mx-auto" />
+                  <Compass className="h-8 w-8 text-slate-600 dark:text-slate-300  mx-auto" />
                   <p className="text-xs font-semibold text-slate-700 ">
                     No assessments taken yet
                   </p>
-                  <p className="text-[11px] text-slate-600">
+                  <p className="text-[11px] text-slate-600 dark:text-slate-300">
                     Take your baseline diagnostic assessment to generate your FRAC capability heatmap.
                   </p>
                   <Button size="sm" onClick={handleStartAssessment} className="mt-2">
@@ -251,7 +251,7 @@ export const AssessmentDashboard: React.FC = () => {
                       className="rounded-xl border border-slate-200  p-3.5 space-y-2 hover:border-emerald-400 transition-colors bg-white "
                     >
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold text-slate-900 ">
+                        <span className="text-xs font-bold text-slate-900 dark:text-slate-100 ">
                           Role Diagnostic
                         </span>
                         {item.overall_score !== null && (

@@ -98,7 +98,7 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({ document, onSummaryU
             <Sparkles className="h-4 w-4" />
           </div>
           <div>
-            <h3 className="text-xs font-bold text-slate-900 ">
+            <h3 className="text-xs font-bold text-slate-900 dark:text-slate-100 ">
               6-Part Sovereign AI Summary
             </h3>
             <p className="text-[10px] text-slate-500">
@@ -166,7 +166,7 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({ document, onSummaryU
       {/* Content Container */}
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {isLoading ? (
-          <div className="flex flex-col items-center justify-center py-16 text-slate-600 gap-2">
+          <div className="flex flex-col items-center justify-center py-16 text-slate-600 dark:text-slate-300 gap-2">
             <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
             <span className="text-xs font-medium">Synthesizing 6-part policy summary...</span>
           </div>
@@ -182,13 +182,13 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({ document, onSummaryU
             {/* 1. Executive Summary */}
             <div className="rounded-xl border border-slate-200  p-3.5 bg-slate-50/40 /30 space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-slate-900  flex items-center gap-1.5">
+                <span className="text-xs font-bold text-slate-900 dark:text-slate-100  flex items-center gap-1.5">
                   <FileText className="h-3.5 w-3.5 text-teal-600" />
                   1. Executive Summary
                 </span>
                 <button
                   onClick={() => copyToClipboard(summary.executive_summary, 'exec')}
-                  className="text-slate-600 hover:text-slate-600"
+                  className="text-slate-600 dark:text-slate-300 hover:text-slate-600 dark:text-slate-300"
                 >
                   {copiedSection === 'exec' ? (
                     <Check className="h-3 w-3 text-teal-600" />
@@ -205,7 +205,7 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({ document, onSummaryU
             {/* 2. Key Policy Changes */}
             {summary.key_policy_changes && summary.key_policy_changes.length > 0 && (
               <div className="rounded-xl border border-slate-200  p-3.5 space-y-2">
-                <span className="text-xs font-bold text-slate-900  flex items-center gap-1.5">
+                <span className="text-xs font-bold text-slate-900 dark:text-slate-100  flex items-center gap-1.5">
                   <TrendingUp className="h-3.5 w-3.5 text-teal-600" />
                   2. Key Policy Changes & Reforms
                 </span>
@@ -223,7 +223,7 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({ document, onSummaryU
             {/* 3. Important Clauses */}
             {summary.important_clauses && summary.important_clauses.length > 0 && (
               <div className="rounded-xl border border-slate-200  p-3.5 space-y-2">
-                <span className="text-xs font-bold text-slate-900  flex items-center gap-1.5">
+                <span className="text-xs font-bold text-slate-900 dark:text-slate-100  flex items-center gap-1.5">
                   <BookOpen className="h-3.5 w-3.5 text-teal-600" />
                   3. Important Clauses & Statutory Mandates
                 </span>
@@ -242,7 +242,7 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({ document, onSummaryU
           <div className="space-y-4">
             {/* 4. Compliance Checklist */}
             <div className="rounded-xl border border-slate-200  p-3.5 space-y-2">
-              <span className="text-xs font-bold text-slate-900  flex items-center gap-1.5">
+              <span className="text-xs font-bold text-slate-900 dark:text-slate-100  flex items-center gap-1.5">
                 <CheckSquare className="h-3.5 w-3.5 text-teal-600" />
                 4. Statutory Compliance Checklist
               </span>
@@ -260,7 +260,7 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({ document, onSummaryU
                     <div
                       className={`h-4 w-4 rounded flex items-center justify-center shrink-0 mt-0.5 border ${
                         checkedItems[idx]
-                          ? 'bg-indigo-500 border-emerald-600 text-slate-900'
+                          ? 'bg-indigo-500 border-emerald-600 text-slate-900 dark:text-slate-100'
                           : 'border-slate-300 '
                       }`}
                     >
@@ -275,7 +275,7 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({ document, onSummaryU
             {/* 5. Action Points */}
             {summary.action_points && summary.action_points.length > 0 && (
               <div className="rounded-xl border border-slate-200  p-3.5 space-y-2">
-                <span className="text-xs font-bold text-slate-900  flex items-center gap-1.5">
+                <span className="text-xs font-bold text-slate-900 dark:text-slate-100  flex items-center gap-1.5">
                   <AlertTriangle className="h-3.5 w-3.5 text-amber-500" />
                   5. Action Points for Government Officers
                 </span>
@@ -293,7 +293,7 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({ document, onSummaryU
         ) : (
           /* 6. FAQs Tab */
           <div className="space-y-2">
-            <span className="text-xs font-bold text-slate-900  flex items-center gap-1.5 mb-2">
+            <span className="text-xs font-bold text-slate-900 dark:text-slate-100  flex items-center gap-1.5 mb-2">
               <HelpCircle className="h-3.5 w-3.5 text-teal-600" />
               6. Frequently Asked Statutory Questions
             </span>
@@ -310,13 +310,13 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({ document, onSummaryU
                   >
                     <span>{faq.question}</span>
                     {isExpanded ? (
-                      <ChevronUp className="h-4 w-4 shrink-0 text-slate-600" />
+                      <ChevronUp className="h-4 w-4 shrink-0 text-slate-600 dark:text-slate-300" />
                     ) : (
-                      <ChevronDown className="h-4 w-4 shrink-0 text-slate-600" />
+                      <ChevronDown className="h-4 w-4 shrink-0 text-slate-600 dark:text-slate-300" />
                     )}
                   </button>
                   {isExpanded && (
-                    <div className="p-3 bg-white  text-slate-600  space-y-1.5 border-t border-slate-100 ">
+                    <div className="p-3 bg-white  text-slate-600 dark:text-slate-300  space-y-1.5 border-t border-slate-100 ">
                       <p className="leading-relaxed">{faq.answer}</p>
                       {faq.rule_ref && (
                         <p className="text-[10px] font-mono text-teal-600 ">

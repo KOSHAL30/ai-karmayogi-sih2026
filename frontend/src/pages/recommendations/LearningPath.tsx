@@ -69,7 +69,7 @@ export const LearningPath: React.FC = () => {
           <p className="mt-1 text-sm">Please ensure backend services are active.</p>
           <button
             onClick={() => refetch()}
-            className="mt-4 rounded-lg bg-red-600 px-4 py-2 text-xs font-semibold text-slate-900 hover:bg-red-700"
+            className="mt-4 rounded-lg bg-red-600 px-4 py-2 text-xs font-semibold text-slate-900 dark:text-slate-100 hover:bg-red-700"
           >
             Retry
           </button>
@@ -114,10 +114,10 @@ export const LearningPath: React.FC = () => {
                 )}
               </div>
 
-              <h1 className="mt-3 text-2xl font-black tracking-tight text-slate-900 sm:text-3xl ">
+              <h1 className="mt-3 text-2xl font-black tracking-tight text-slate-900 dark:text-slate-100 sm:text-3xl ">
                 Civil Service Competency Progression Pathway
               </h1>
-              <p className="mt-1.5 max-w-3xl text-xs text-slate-600 sm:text-sm ">
+              <p className="mt-1.5 max-w-3xl text-xs text-slate-600 dark:text-slate-300 sm:text-sm ">
                 A step-by-step milestone curriculum calibrated to bridge diagnosed FRAC deficits through bite-sized learning, administrative case drills, and formative evaluations.
               </p>
             </div>

@@ -33,7 +33,7 @@ export const ForgotPassword: React.FC = () => {
           <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-500 text-white shadow-lg shadow-emerald-600/25">
             <Compass className="h-6 w-6" />
           </div>
-          <h1 className="text-2xl font-extrabold tracking-tight text-slate-900 ">
+          <h1 className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 ">
             Credential Recovery
           </h1>
           <p className="text-xs text-slate-500 ">

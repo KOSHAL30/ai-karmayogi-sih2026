@@ -88,7 +88,7 @@ export const Navbar: React.FC = () => {
                 <Compass className="h-5 w-5" />
               </div>
               <div className="flex flex-col shrink-0">
-                <span className="text-base font-extrabold tracking-tight text-slate-900  flex items-center gap-1.5 whitespace-nowrap">
+                <span className="text-base font-extrabold tracking-tight text-slate-900 dark:text-slate-100  flex items-center gap-1.5 whitespace-nowrap">
                   AI Karmayogi
                   <span className="rounded-md bg-emerald-50  px-1.5 py-0.5 text-[10px] font-semibold text-emerald-700  border border-emerald-200/60 ">
                     FRAC
@@ -108,8 +108,8 @@ export const Navbar: React.FC = () => {
                   to="/"
                   className={`px-2 py-1 rounded-md text-[13px] font-medium whitespace-nowrap shrink-0 transition-colors ${
                     location.pathname === '/'
-                      ? 'bg-slate-100  text-slate-900 '
-                      : 'text-slate-600  hover:text-slate-900'
+                      ? 'bg-slate-100  text-slate-900 dark:text-slate-100 '
+                      : 'text-slate-600 dark:text-slate-300  hover:text-slate-900 dark:text-slate-100'
                   }`}
                 >
                   {t('nav.overview', 'Overview')}
@@ -118,8 +118,8 @@ export const Navbar: React.FC = () => {
                   to="/assessment"
                   className={`px-2 py-1 rounded-md text-[13px] font-medium whitespace-nowrap shrink-0 transition-colors ${
                     location.pathname.startsWith('/assessment')
-                      ? 'bg-slate-100  text-slate-900 '
-                      : 'text-slate-600  hover:text-slate-900'
+                      ? 'bg-slate-100  text-slate-900 dark:text-slate-100 '
+                      : 'text-slate-600 dark:text-slate-300  hover:text-slate-900 dark:text-slate-100'
                   }`}
                 >
                   {t('nav.assessments', 'Assessments')}
@@ -128,8 +128,8 @@ export const Navbar: React.FC = () => {
                   to="/recommendations"
                   className={`px-2 py-1 rounded-md text-[13px] font-medium whitespace-nowrap shrink-0 transition-colors ${
                     location.pathname === '/recommendations'
-                      ? 'bg-slate-100  text-slate-900 '
-                      : 'text-slate-600  hover:text-slate-900'
+                      ? 'bg-slate-100  text-slate-900 dark:text-slate-100 '
+                      : 'text-slate-600 dark:text-slate-300  hover:text-slate-900 dark:text-slate-100'
                   }`}
                 >
                   {t('nav.recommendations', 'Recommendations')}
@@ -138,8 +138,8 @@ export const Navbar: React.FC = () => {
                   to="/learning-path"
                   className={`px-2 py-1 rounded-md text-[13px] font-medium whitespace-nowrap shrink-0 transition-colors ${
                     location.pathname === '/learning-path'
-                      ? 'bg-slate-100  text-slate-900 '
-                      : 'text-slate-600  hover:text-slate-900'
+                      ? 'bg-slate-100  text-slate-900 dark:text-slate-100 '
+                      : 'text-slate-600 dark:text-slate-300  hover:text-slate-900 dark:text-slate-100'
                   }`}
                 >
                   {t('nav.learning_path', 'Learning Path')}
@@ -148,8 +148,8 @@ export const Navbar: React.FC = () => {
                   to="/trainer/documents"
                   className={`px-2 py-1 rounded-md text-[13px] font-medium whitespace-nowrap shrink-0 transition-colors ${
                     location.pathname.startsWith('/trainer/documents')
-                      ? 'bg-slate-100  text-slate-900 '
-                      : 'text-slate-600  hover:text-slate-900'
+                      ? 'bg-slate-100  text-slate-900 dark:text-slate-100 '
+                      : 'text-slate-600 dark:text-slate-300  hover:text-slate-900 dark:text-slate-100'
                   }`}
                 >
                   {t('nav.trainer_studio', 'Trainer Studio')}
@@ -158,8 +158,8 @@ export const Navbar: React.FC = () => {
                   to="/certificates"
                   className={`px-2 py-1 rounded-md text-[13px] font-medium whitespace-nowrap shrink-0 transition-colors ${
                     location.pathname.startsWith('/certificates')
-                      ? 'bg-slate-100  text-slate-900 '
-                      : 'text-slate-600  hover:text-slate-900'
+                      ? 'bg-slate-100  text-slate-900 dark:text-slate-100 '
+                      : 'text-slate-600 dark:text-slate-300  hover:text-slate-900 dark:text-slate-100'
                   }`}
                 >
                   {t('nav.certificates', 'Certificates')}
@@ -168,8 +168,8 @@ export const Navbar: React.FC = () => {
                   to="/admin"
                   className={`px-2 py-1 rounded-md text-[13px] font-medium whitespace-nowrap shrink-0 transition-colors ${
                     location.pathname.startsWith('/admin')
-                      ? 'bg-slate-100  text-slate-900 '
-                      : 'text-slate-600  hover:text-slate-900'
+                      ? 'bg-slate-100  text-slate-900 dark:text-slate-100 '
+                      : 'text-slate-600 dark:text-slate-300  hover:text-slate-900 dark:text-slate-100'
                   }`}
                 >
                   {t('nav.admin_analytics', 'Admin Analytics')}
@@ -178,8 +178,8 @@ export const Navbar: React.FC = () => {
                   to="/profile"
                   className={`px-2 py-1 rounded-md text-[13px] font-medium whitespace-nowrap shrink-0 transition-colors ${
                     location.pathname === '/profile'
-                      ? 'bg-slate-100  text-slate-900 '
-                      : 'text-slate-600  hover:text-slate-900'
+                      ? 'bg-slate-100  text-slate-900 dark:text-slate-100 '
+                      : 'text-slate-600 dark:text-slate-300  hover:text-slate-900 dark:text-slate-100'
                   }`}
                 >
                   {t('nav.profile', 'Profile')}
@@ -199,7 +199,7 @@ export const Navbar: React.FC = () => {
                 <button
                   onClick={() => setNotificationsOpen(!notificationsOpen)}
                   title="Administrative Alerts & Notifications"
-                  className="p-2 rounded-lg text-slate-600  hover:bg-slate-100  transition-colors relative"
+                  className="p-2 rounded-lg text-slate-600 dark:text-slate-300  hover:bg-slate-100  transition-colors relative"
                 >
                   <Bell className="h-4 w-4" />
                   {unreadCount > 0 && (
@@ -230,7 +230,7 @@ export const Navbar: React.FC = () => {
                   onClick={() => setUserDropdownOpen(!userDropdownOpen)}
                   className="flex items-center gap-2.5 p-1.5 rounded-lg hover:bg-slate-100  transition-colors"
                 >
-                  <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-emerald-600 to-emerald-400 flex items-center justify-center text-slate-900 text-xs font-bold shadow-sm">
+                  <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-emerald-600 to-emerald-400 flex items-center justify-center text-slate-900 dark:text-slate-100 text-xs font-bold shadow-sm">
                     {user.full_name
                       .split(' ')
                       .map((n) => n[0])
@@ -239,7 +239,7 @@ export const Navbar: React.FC = () => {
                       .toUpperCase()}
                   </div>
                   <div className="hidden lg:flex flex-col text-left">
-                    <span className="text-xs font-semibold text-slate-900  max-w-[130px] truncate">
+                    <span className="text-xs font-semibold text-slate-900 dark:text-slate-100  max-w-[130px] truncate">
                       {user.full_name}
                     </span>
                     <span className="text-[10px] text-slate-500  max-w-[130px] truncate">
@@ -253,7 +253,7 @@ export const Navbar: React.FC = () => {
                   >
                     {getRoleBadge(user.role).label}
                   </span>
-                  <ChevronDown className="h-3.5 w-3.5 text-slate-600 shrink-0 ml-1" />
+                  <ChevronDown className="h-3.5 w-3.5 text-slate-600 dark:text-slate-300 shrink-0 ml-1" />
                 </button>
 
                 {/* Dropdown menu */}
@@ -263,7 +263,7 @@ export const Navbar: React.FC = () => {
                     className="absolute right-0 mt-2 w-56 rounded-xl border border-slate-200  bg-white  py-1.5 shadow-xl z-50 animate-in fade-in slide-in-from-top-2 duration-150"
                   >
                     <div className="px-4 py-2 border-b border-slate-100 ">
-                      <p className="text-xs font-bold text-slate-900 ">{user.full_name}</p>
+                      <p className="text-xs font-bold text-slate-900 dark:text-slate-100 ">{user.full_name}</p>
                       <p className="text-[11px] text-slate-500 truncate">{user.email}</p>
                       <p className="text-[10px] text-teal-600  mt-1 font-medium truncate">
                         {user.department}

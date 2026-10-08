@@ -167,7 +167,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
       category: 'Navigation',
       label: 'Officer Profile & Security Settings',
       sublabel: 'Manage credentials & password',
-      icon: <User className="h-4 w-4 text-slate-600" />,
+      icon: <User className="h-4 w-4 text-slate-600 dark:text-slate-300" />,
       perform: () => {
         navigate('/profile');
         onClose();
@@ -256,7 +256,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
       aria-modal="true"
       className="fixed inset-0 z-50 flex items-start justify-center pt-20 sm:pt-28 bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-100"
     >
-      <div className="relative w-full max-w-xl rounded-2xl border border-slate-200 bg-white/95 text-slate-900 shadow-2xl overflow-hidden flex flex-col backdrop-blur-xl">
+      <div className="relative w-full max-w-xl rounded-2xl border border-slate-200 bg-white/95 text-slate-900 dark:text-slate-100 shadow-2xl overflow-hidden flex flex-col backdrop-blur-xl">
         {/* Search Header */}
         <div className="flex items-center gap-3 px-4 py-3.5 border-b border-slate-200">
           <Search className="h-5 w-5 text-teal-700 shrink-0" />
@@ -270,9 +270,9 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
               setSelectedIndex(0);
             }}
             onKeyDown={handleKeyDown}
-            className="flex-1 bg-transparent text-sm text-slate-900 placeholder:text-slate-500 focus:outline-none"
+            className="flex-1 bg-transparent text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-500 focus:outline-none"
           />
-          <kbd className="hidden sm:inline-block px-2 py-0.5 text-[10px] font-mono font-semibold rounded bg-white text-slate-600 border border-slate-200">
+          <kbd className="hidden sm:inline-block px-2 py-0.5 text-[10px] font-mono font-semibold rounded bg-white text-slate-600 dark:text-slate-300 border border-slate-200">
             ESC
           </kbd>
         </div>
@@ -291,8 +291,8 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
                 onMouseEnter={() => setSelectedIndex(index)}
                 className={`flex items-center justify-between p-2.5 rounded-xl cursor-pointer transition-colors ${
                   selectedIndex === index
-                    ? 'bg-indigo-500/30 text-slate-900 border border-emerald-500/40'
-                    : 'text-slate-600 hover:bg-white/60 border border-transparent'
+                    ? 'bg-indigo-500/30 text-slate-900 dark:text-slate-100 border border-emerald-500/40'
+                    : 'text-slate-600 dark:text-slate-300 hover:bg-white/60 dark:bg-white/5 border border-transparent'
                 }`}
               >
                 <div className="flex items-center gap-3 min-w-0">
@@ -302,14 +302,14 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
                   <div className="min-w-0">
                     <p className="text-xs font-bold truncate">{item.label}</p>
                     {item.sublabel && (
-                      <p className="text-[10px] text-slate-600 truncate">{item.sublabel}</p>
+                      <p className="text-[10px] text-slate-600 dark:text-slate-300 truncate">{item.sublabel}</p>
                     )}
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2 shrink-0">
                   {item.shortcut && (
-                    <kbd className="px-1.5 py-0.5 text-[9px] font-mono rounded bg-white text-slate-600 border border-slate-200">
+                    <kbd className="px-1.5 py-0.5 text-[9px] font-mono rounded bg-white text-slate-600 dark:text-slate-300 border border-slate-200">
                       {item.shortcut}
                     </kbd>
                   )}
@@ -323,7 +323,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
         </div>
 
         {/* Footer Navigation Hints */}
-        <div className="px-4 py-2 bg-white/60 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-slate-500">
+        <div className="px-4 py-2 bg-white/60 dark:bg-white/5 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-slate-500">
           <div className="flex items-center gap-3">
             <span>↑↓ Navigate</span>
             <span>↵ Select</span>

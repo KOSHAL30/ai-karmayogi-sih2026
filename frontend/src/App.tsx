@@ -103,7 +103,7 @@ function OverviewPage() {
     return (
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8 animate-in fade-in duration-300">
         {/* Sovereign Header Banner */}
-        <div className="relative overflow-hidden rounded-3xl bg-indigo-50 border-indigo-100 p-8 sm:p-10 text-slate-900 shadow-2xl border border-slate-200/40">
+        <div className="relative overflow-hidden rounded-3xl bg-indigo-50 dark:bg-slate-900 border-indigo-100 dark:border-slate-800 p-8 sm:p-10 text-slate-900 dark:text-slate-100 shadow-2xl border border-slate-200/40">
           {/* Ambient Glows & Watermark */}
           <div className="absolute -top-32 -left-32 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 right-0 w-[28rem] h-[28rem] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -112,9 +112,9 @@ function OverviewPage() {
             {/* Top Sovereign Tag */}
             <div className="flex flex-wrap items-center gap-2 text-xs">
               <span className="font-semibold text-[#FF9933]">सत्यमेव जयते</span>
-              <span className="text-slate-900/40">•</span>
-              <span className="text-slate-900/70 font-medium">Mission Karmayogi Bharat Sovereign Portal</span>
-              <span className="text-slate-900/40">•</span>
+              <span className="text-slate-900 dark:text-slate-100/40">•</span>
+              <span className="text-slate-900 dark:text-slate-100/70 font-medium">Mission Karmayogi Bharat Sovereign Portal</span>
+              <span className="text-slate-900 dark:text-slate-100/40">•</span>
               <span className="text-teal-700 font-medium flex items-center gap-1">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400" />
                 FRAC v1.6 Calibrated
@@ -126,7 +126,7 @@ function OverviewPage() {
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
                 {t('overview.welcome_back', 'Welcome back')}, {user.full_name}
               </h1>
-              <p className="text-sm sm:text-base text-teal-700/90 font-medium mt-1">
+              <p className="text-sm sm:text-base text-teal-700/90 dark:text-teal-200/80 font-medium mt-1">
                 {user.designation} • {user.department}, {t('brand.motto', 'Government of India')}
               </p>
             </div>
@@ -135,7 +135,7 @@ function OverviewPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
               {/* Card 1: Diagnostic Assessment */}
               <Link to="/assessment" className="group">
-                <div className="h-full bg-white/60 hover:bg-white/90 backdrop-blur-md border border-indigo-200/50 hover:border-emerald-400/50 rounded-2xl p-5 transition-all duration-200 flex flex-col justify-between">
+                <div className="h-full bg-white/60 dark:bg-white/5 hover:bg-white/90 dark:hover:bg-white/10 backdrop-blur-md border border-indigo-200/50 dark:border-white/10 hover:border-emerald-400/50 rounded-2xl p-5 transition-all duration-200 flex flex-col justify-between">
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <div className="h-9 w-9 rounded-xl bg-indigo-500/20 text-teal-700 flex items-center justify-center">
@@ -145,10 +145,10 @@ function OverviewPage() {
                         FRAC Mandate
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-teal-700 transition-colors">
+                    <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-teal-700 transition-colors">
                       Start Diagnostic Assessment
                     </h3>
-                    <p className="text-xs text-slate-600/80 leading-relaxed">
+                    <p className="text-xs text-slate-600 dark:text-slate-300/80 leading-relaxed">
                       Evaluate your competency gaps against FRAC statutory mandates and cadre benchmarks.
                     </p>
                   </div>
@@ -161,7 +161,7 @@ function OverviewPage() {
 
               {/* Card 2: Learning Path */}
               <Link to="/learning-path" className="group">
-                <div className="h-full bg-white/60 hover:bg-white/90 backdrop-blur-md border border-indigo-200/50 hover:border-emerald-400/50 rounded-2xl p-5 transition-all duration-200 flex flex-col justify-between">
+                <div className="h-full bg-white/60 dark:bg-white/5 hover:bg-white/90 dark:hover:bg-white/10 backdrop-blur-md border border-indigo-200/50 dark:border-white/10 hover:border-emerald-400/50 rounded-2xl p-5 transition-all duration-200 flex flex-col justify-between">
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <div className="h-9 w-9 rounded-xl bg-indigo-500/20 text-teal-700 flex items-center justify-center">
@@ -171,10 +171,10 @@ function OverviewPage() {
                         Step 3 of 8
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-teal-700 transition-colors">
+                    <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-teal-700 transition-colors">
                       View Learning Path
                     </h3>
-                    <p className="text-xs text-slate-600/80 leading-relaxed">
+                    <p className="text-xs text-slate-600 dark:text-slate-300/80 leading-relaxed">
                       4-week structured trajectory towards Cadre Competency Tier-1 statutory qualification.
                     </p>
                   </div>
@@ -187,7 +187,7 @@ function OverviewPage() {
 
               {/* Card 3: Recommendations */}
               <Link to="/recommendations" className="group">
-                <div className="h-full bg-white/60 hover:bg-white/90 backdrop-blur-md border border-indigo-200/50 hover:border-amber-400/50 rounded-2xl p-5 transition-all duration-200 flex flex-col justify-between">
+                <div className="h-full bg-white/60 dark:bg-white/5 hover:bg-white/90 dark:hover:bg-white/10 backdrop-blur-md border border-indigo-200/50 dark:border-white/10 hover:border-amber-400/50 rounded-2xl p-5 transition-all duration-200 flex flex-col justify-between">
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <div className="h-9 w-9 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center">
@@ -197,10 +197,10 @@ function OverviewPage() {
                         Synthesized
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
+                    <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-amber-700 transition-colors">
                       Explore Recommendations
                     </h3>
-                    <p className="text-xs text-slate-600/80 leading-relaxed">
+                    <p className="text-xs text-slate-600 dark:text-slate-300/80 leading-relaxed">
                       12 AI-curated modules synthesized from recent diagnostic gaps and procurement revisions.
                     </p>
                   </div>
@@ -217,13 +217,13 @@ function OverviewPage() {
         {/* Progress Snapshot Row */}
         <div className="space-y-3">
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-bold text-slate-900  flex items-center gap-2">
+            <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100  flex items-center gap-2">
               Your Progress Snapshot
-              <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100  text-slate-600">
+              <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100  text-slate-600 dark:text-slate-300">
                 S2 FY25-26
               </span>
             </h2>
-            <span className="text-xs text-slate-600 flex items-center gap-1">
+            <span className="text-xs text-slate-600 dark:text-slate-300 flex items-center gap-1">
               <span className="h-1.5 w-1.5 rounded-full bg-indigo-500" />
               Last IRT Sync: Today at 06:00 IST
             </span>
@@ -240,8 +240,8 @@ function OverviewPage() {
                   </span>
                 </div>
                 <div className="mt-3 flex items-baseline gap-2">
-                  <span className="text-3xl font-extrabold text-slate-900"></span>
-                  <span className="text-xs text-slate-600">Cadre Target: 72%</span>
+                  <span className="text-3xl font-extrabold text-slate-900 dark:text-slate-100"></span>
+                  <span className="text-xs text-slate-600 dark:text-slate-300">Cadre Target: 72%</span>
                 </div>
                 <div className="mt-2 flex items-center gap-1 text-[11px] text-teal-600  font-medium">
                   <span>+4.2% vs last cycle</span>
@@ -257,8 +257,8 @@ function OverviewPage() {
                   <BookOpen className="h-4 w-4 text-teal-600" />
                 </div>
                 <div className="mt-3 flex items-baseline gap-1.5">
-                  <span className="text-3xl font-extrabold text-slate-900"></span>
-                  <span className="text-base text-slate-600">/ 12 completed</span>
+                  <span className="text-3xl font-extrabold text-slate-900 dark:text-slate-100"></span>
+                  <span className="text-base text-slate-600 dark:text-slate-300">/ 12 completed</span>
                 </div>
                 <div className="mt-3 w-full bg-slate-100  rounded-full h-1.5 overflow-hidden">
                   <div className="bg-indigo-500 h-full rounded-full w-[33%]" />
@@ -274,8 +274,8 @@ function OverviewPage() {
                   <Clock className="h-4 w-4 text-teal-600" />
                 </div>
                 <div className="mt-3 flex items-baseline gap-1.5">
-                  <span className="text-3xl font-extrabold text-slate-900"></span>
-                  <span className="text-sm text-slate-600">Hours</span>
+                  <span className="text-3xl font-extrabold text-slate-900 dark:text-slate-100"></span>
+                  <span className="text-sm text-slate-600 dark:text-slate-300">Hours</span>
                 </div>
                 <div className="mt-2 text-[11px] text-slate-500">
                   Cadence: 3.3 hrs/wk (Target: 4.0)
@@ -284,7 +284,7 @@ function OverviewPage() {
             </Card>
 
             {/* Tile 4: Mandatory Assessment Callout */}
-            <Card className="border-slate-200/80  shadow-xs bg-white text-slate-900">
+            <Card className="border-slate-200/80  shadow-xs bg-white text-slate-900 dark:text-slate-100">
               <CardContent className="pt-5 pb-5 flex flex-col justify-between h-full">
                 <div>
                   <div className="flex items-center justify-between text-xs">
@@ -294,10 +294,10 @@ function OverviewPage() {
                     </span>
                   </div>
                   <p className="mt-2 text-sm font-bold">Statutory Mid-Career Review</p>
-                  <p className="text-[11px] text-slate-600">Due: 18 Oct 2026</p>
+                  <p className="text-[11px] text-slate-600 dark:text-slate-300">Due: 18 Oct 2026</p>
                 </div>
                 <Link to="/assessment" className="mt-3">
-                  <Button size="sm" className="w-full bg-white text-slate-900 hover:bg-slate-100 text-xs font-semibold">
+                  <Button size="sm" className="w-full bg-white text-slate-900 dark:text-slate-100 hover:bg-slate-100 text-xs font-semibold">
                     Launch Assessment
                   </Button>
                 </Link>
@@ -337,10 +337,10 @@ function OverviewPage() {
                   </div>
                   <div className="flex-1 space-y-1">
                     <div className="flex items-center justify-between">
-                      <h4 className="text-xs font-bold text-slate-900">
+                      <h4 className="text-xs font-bold text-slate-900 dark:text-slate-100">
                         Completed Module: Ethics & Conduct in Public Service
                       </h4>
-                      <span className="text-[10px] text-slate-600">Today • 10:30 AM</span>
+                      <span className="text-[10px] text-slate-600 dark:text-slate-300">Today • 10:30 AM</span>
                     </div>
                     <p className="text-xs text-slate-500  leading-relaxed">
                       Passed post-course comprehension evaluation with 84% accuracy. Rule 13 & 14 CCS (Conduct) Rules certified under FRAC mandate.
@@ -361,10 +361,10 @@ function OverviewPage() {
                   </div>
                   <div className="flex-1 space-y-1">
                     <div className="flex items-center justify-between">
-                      <h4 className="text-xs font-bold text-slate-900">
+                      <h4 className="text-xs font-bold text-slate-900 dark:text-slate-100">
                         Assessment Score: 72% on GFR 2017 & GeM Procurement Module
                       </h4>
-                      <span className="text-[10px] text-slate-600">Yesterday • 04:20 PM</span>
+                      <span className="text-[10px] text-slate-600 dark:text-slate-300">Yesterday • 04:20 PM</span>
                     </div>
                     <p className="text-xs text-slate-500  leading-relaxed">
                       Evaluated across Rule 149 reverse auction thresholds. Minor gap detected in direct purchase ceilings above ₹5 Lakhs.
@@ -384,10 +384,10 @@ function OverviewPage() {
                   </div>
                   <div className="flex-1 space-y-1">
                     <div className="flex items-center justify-between">
-                      <h4 className="text-xs font-bold text-slate-900">
+                      <h4 className="text-xs font-bold text-slate-900 dark:text-slate-100">
                         Started: RTI Act Compliance & Appellate Procedures Training
                       </h4>
-                      <span className="text-[10px] text-slate-600">2 days ago • 11:00 AM</span>
+                      <span className="text-[10px] text-slate-600 dark:text-slate-300">2 days ago • 11:00 AM</span>
                     </div>
                     <p className="text-xs text-slate-500  leading-relaxed">
                       Section 8(1)(j) third-party privacy exemption analysis module opened. Time actively engaged: 45 minutes.
@@ -411,7 +411,7 @@ function OverviewPage() {
               <CardContent className="pt-4 pb-4 space-y-2">
                 <div className="flex items-center gap-2">
                   <Award className="h-4 w-4 text-teal-600  />" />
-                  <h4 className="text-xs font-bold text-slate-900">
+                  <h4 className="text-xs font-bold text-slate-900 dark:text-slate-100">
                     FRAC Statutory Compliance
                   </h4>
                 </div>
@@ -441,10 +441,10 @@ function OverviewPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-10 animate-in fade-in duration-300">
       {/* Sovereign Hero Banner */}
-      <div className="relative overflow-hidden rounded-3xl bg-indigo-50 border-indigo-100 p-8 sm:p-12 text-slate-900 shadow-2xl border border-slate-200/40">
+      <div className="relative overflow-hidden rounded-3xl bg-indigo-50 dark:bg-slate-900 border-indigo-100 dark:border-slate-800 p-8 sm:p-12 text-slate-900 dark:text-slate-100 shadow-2xl border border-slate-200/40">
         <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-teal-500/10 blur-3xl pointer-events-none" />
         <div className="relative z-10 max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/60 backdrop-blur-md px-3 py-1 text-xs font-semibold text-teal-800 border border-indigo-200/50">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/60 dark:bg-white/5 backdrop-blur-md px-3 py-1 text-xs font-semibold text-teal-800 border border-indigo-200/50 dark:border-white/10">
             <Sparkles className="h-3.5 w-3.5 text-[#FF9933]" />
             <span>{t('overview.badge', 'Mission Karmayogi Bharat Sovereign Portal')}</span>
           </div>
@@ -453,7 +453,7 @@ function OverviewPage() {
             {t('overview.hero_title', 'AI-Enabled Competency Diagnostic & Learning Ecosystem')}
           </h1>
 
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
             {t('overview.hero_desc', 'Diagnosing civil service competency gaps, aligning role-based training via the iGOT Karmayogi repository, and delivering automated assessment generation for modern Indian governance.')}
           </p>
 
@@ -465,7 +465,7 @@ function OverviewPage() {
               </Button>
             </Link>
             <Link to="/register">
-              <Button variant="outline" className="text-slate-900 border-slate-600 hover:bg-white/60 font-medium">
+              <Button variant="outline" className="text-slate-900 dark:text-slate-100 border-slate-600 hover:bg-white/60 dark:bg-white/5 font-medium">
                 {t('overview.register_officer', 'Register as Officer')}
               </Button>
             </Link>
@@ -477,7 +477,7 @@ function OverviewPage() {
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-xl font-bold tracking-tight text-slate-900">
+            <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
               {t('overview.roles_title', 'Sovereign Role Archetypes')}
             </h2>
             <p className="text-xs text-slate-500">
@@ -502,13 +502,13 @@ function OverviewPage() {
                 </div>
                 <CardTitle className="text-base flex items-center justify-between">
                   Civil Services Official (Learner)
-                  <ArrowRight className="h-4 w-4 text-slate-600" />
+                  <ArrowRight className="h-4 w-4 text-slate-600 dark:text-slate-300" />
                 </CardTitle>
                 <CardDescription className="text-xs">
                   Demo Officer: Rajesh Kumar (Under Secretary)
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-2 text-xs text-slate-600">
+              <CardContent className="space-y-2 text-xs text-slate-600 dark:text-slate-300">
                 <p>• FRAC Competency Gap Self-Assessment</p>
                 <p>• Explainable Course Recommendations from iGOT</p>
                 <p>• Adaptive Quiz Engine with Feedback</p>
@@ -525,13 +525,13 @@ function OverviewPage() {
                 </div>
                 <CardTitle className="text-base flex items-center justify-between">
                   Training Faculty (Trainer)
-                  <ArrowRight className="h-4 w-4 text-slate-600" />
+                  <ArrowRight className="h-4 w-4 text-slate-600 dark:text-slate-300" />
                 </CardTitle>
                 <CardDescription className="text-xs">
                   Demo Faculty: Dr. Sunita Deshmukh (Senior Faculty)
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-2 text-xs text-slate-600">
+              <CardContent className="space-y-2 text-xs text-slate-600 dark:text-slate-300">
                 <p>• Policy Material Upload (PDF & Guidelines)</p>
                 <p>• Sovereign RAG with Statutory Citations</p>
                 <p>• Bloom's Taxonomy Automated MCQ Studio</p>
@@ -548,13 +548,13 @@ function OverviewPage() {
                 </div>
                 <CardTitle className="text-base flex items-center justify-between">
                   Governance Lead (Admin)
-                  <ArrowRight className="h-4 w-4 text-slate-600" />
+                  <ArrowRight className="h-4 w-4 text-slate-600 dark:text-slate-300" />
                 </CardTitle>
                 <CardDescription className="text-xs">
                   Demo Lead: Dr. Priya Nair (Director Analytics)
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-2 text-xs text-slate-600">
+              <CardContent className="space-y-2 text-xs text-slate-600 dark:text-slate-300">
                 <p>• Departmental Competency Heatmaps & Health</p>
                 <p>• FRAC Taxonomy & Work-Role Allocation</p>
                 <p>• Officer Management & Sovereign RBAC</p>
@@ -585,7 +585,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50  text-slate-900  transition-colors duration-200">
+    <div className="min-h-screen flex flex-col bg-slate-50  text-slate-900 dark:text-slate-100  transition-colors duration-200">
       {!isAuthPage && <Navbar />}
 
       <main className={isAuthPage ? 'h-screen w-full overflow-hidden' : 'flex-1'}>

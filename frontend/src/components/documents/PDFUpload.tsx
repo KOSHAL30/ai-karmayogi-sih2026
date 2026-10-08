@@ -156,7 +156,7 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadSuccess, onCancel 
             <UploadCloud className="h-5 w-5" />
           </div>
           <div>
-            <h3 className="text-sm font-bold text-slate-900 ">
+            <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 ">
               Sovereign Document Ingestion Studio
             </h3>
             <p className="text-xs text-slate-500">
@@ -167,7 +167,7 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadSuccess, onCancel 
         {onCancel && (
           <button
             onClick={onCancel}
-            className="p-1 rounded-lg text-slate-600 hover:text-slate-600  hover:bg-slate-100"
+            className="p-1 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-600 dark:text-slate-300  hover:bg-slate-100"
           >
             <X className="h-4 w-4" />
           </button>
@@ -208,11 +208,11 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadSuccess, onCancel 
                 }
               }}
             />
-            <FileText className="mx-auto h-10 w-10 text-slate-600  mb-2" />
+            <FileText className="mx-auto h-10 w-10 text-slate-600 dark:text-slate-300  mb-2" />
             <p className="text-xs font-semibold text-slate-700 ">
               Drag and drop sovereign policy PDF here, or <span className="text-teal-600  underline">browse</span>
             </p>
-            <p className="text-[11px] text-slate-600 mt-1">
+            <p className="text-[11px] text-slate-600 dark:text-slate-300 mt-1">
               Supports GFR 2017, CCS Conduct Rules, Procurement Guidelines, OMs up to 50MB
             </p>
           </div>
@@ -223,7 +223,7 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadSuccess, onCancel 
                 <FileCheck className="h-5 w-5" />
               </div>
               <div className="text-left">
-                <p className="text-xs font-bold text-slate-900  truncate max-w-xs sm:max-w-md">
+                <p className="text-xs font-bold text-slate-900 dark:text-slate-100  truncate max-w-xs sm:max-w-md">
                   {file.name}
                 </p>
                 <p className="text-[10px] text-slate-500">
@@ -235,7 +235,7 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadSuccess, onCancel 
               type="button"
               disabled={isUploading}
               onClick={() => setFile(null)}
-              className="text-xs text-slate-600 hover:text-rose-500 p-1"
+              className="text-xs text-slate-600 dark:text-slate-300 hover:text-rose-500 p-1"
             >
               <X className="h-4 w-4" />
             </button>
@@ -253,7 +253,7 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadSuccess, onCancel 
               onChange={(e) => setTitle(e.target.value)}
               placeholder="e.g. General Financial Rules (GFR) 2017 - Rule 149 GeM Mandate"
               required
-              className="w-full text-xs px-3 py-2 rounded-lg border border-slate-300  bg-white  text-slate-900  focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full text-xs px-3 py-2 rounded-lg border border-slate-300  bg-white  text-slate-900 dark:text-slate-100  focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
 
@@ -264,7 +264,7 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadSuccess, onCancel 
             <select
               value={docType}
               onChange={(e) => setDocType(e.target.value)}
-              className="w-full text-xs px-3 py-2 rounded-lg border border-slate-300  bg-white  text-slate-900  focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full text-xs px-3 py-2 rounded-lg border border-slate-300  bg-white  text-slate-900 dark:text-slate-100  focus:outline-none focus:ring-2 focus:ring-emerald-500"
             >
               {DOCUMENT_TYPES.map((t) => (
                 <option key={t.value} value={t.value}>
@@ -281,7 +281,7 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadSuccess, onCancel 
             <select
               value={ministry}
               onChange={(e) => setMinistry(e.target.value)}
-              className="w-full text-xs px-3 py-2 rounded-lg border border-slate-300  bg-white  text-slate-900  focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full text-xs px-3 py-2 rounded-lg border border-slate-300  bg-white  text-slate-900 dark:text-slate-100  focus:outline-none focus:ring-2 focus:ring-emerald-500"
             >
               {MINISTRIES.map((m) => (
                 <option key={m} value={m}>
@@ -300,7 +300,7 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadSuccess, onCancel 
               value={department}
               onChange={(e) => setDepartment(e.target.value)}
               placeholder="e.g. DoPT, Procurement Policy Division"
-              className="w-full text-xs px-3 py-2 rounded-lg border border-slate-300  bg-white  text-slate-900  focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full text-xs px-3 py-2 rounded-lg border border-slate-300  bg-white  text-slate-900 dark:text-slate-100  focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
 
@@ -313,7 +313,7 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadSuccess, onCancel 
               value={omNumber}
               onChange={(e) => setOmNumber(e.target.value)}
               placeholder="e.g. F.No. 6/1/2023-PPD"
-              className="w-full text-xs px-3 py-2 rounded-lg border border-slate-300  bg-white  text-slate-900  focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full text-xs px-3 py-2 rounded-lg border border-slate-300  bg-white  text-slate-900 dark:text-slate-100  focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
 
@@ -325,7 +325,7 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadSuccess, onCancel 
               type="date"
               value={issueDate}
               onChange={(e) => setIssueDate(e.target.value)}
-              className="w-full text-xs px-3 py-2 rounded-lg border border-slate-300  bg-white  text-slate-900  focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full text-xs px-3 py-2 rounded-lg border border-slate-300  bg-white  text-slate-900 dark:text-slate-100  focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
         </div>

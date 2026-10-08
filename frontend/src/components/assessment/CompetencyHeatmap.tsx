@@ -82,7 +82,7 @@ export const CompetencyHeatmap: React.FC<CompetencyHeatmapProps> = ({ competenci
                 <span className="text-xs font-bold text-slate-800  uppercase tracking-wider">
                   {getPillarLabel(pillar)}
                 </span>
-                <span className="text-[11px] text-slate-600 font-medium">
+                <span className="text-[11px] text-slate-600 dark:text-slate-300 font-medium">
                   {pillarComps.length} Evaluated
                 </span>
               </div>
@@ -106,15 +106,15 @@ export const CompetencyHeatmap: React.FC<CompetencyHeatmapProps> = ({ competenci
                             {style.label}
                           </span>
                         </div>
-                        <p className="text-xs font-bold text-slate-900  line-clamp-2">
+                        <p className="text-xs font-bold text-slate-900 dark:text-slate-100  line-clamp-2">
                           {comp.competency_name}
                         </p>
                       </div>
 
                       <div className="space-y-1.5 pt-1 border-t border-slate-200/60 /60 text-[11px]">
-                        <div className="flex items-center justify-between text-slate-600 ">
-                          <span>Mandated: <strong className="text-slate-900 ">L{comp.mandated_level}</strong></span>
-                          <span>Demonstrated: <strong className="text-slate-900 ">L{comp.demonstrated_level}</strong></span>
+                        <div className="flex items-center justify-between text-slate-600 dark:text-slate-300 ">
+                          <span>Mandated: <strong className="text-slate-900 dark:text-slate-100 ">L{comp.mandated_level}</strong></span>
+                          <span>Demonstrated: <strong className="text-slate-900 dark:text-slate-100 ">L{comp.demonstrated_level}</strong></span>
                         </div>
 
                         {/* Deficit Bar */}

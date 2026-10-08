@@ -76,8 +76,8 @@ export const RadarChartCard: React.FC<RadarChartCardProps> = ({ competencies }) 
                     const data = payload[0].payload;
                     return (
                       <div className="rounded-xl border border-slate-200  bg-white/95 /95 backdrop-blur-md p-3 shadow-xl text-xs space-y-1">
-                        <p className="font-bold text-slate-900 ">{data.fullName}</p>
-                        <p className="text-[10px] text-slate-600 uppercase tracking-wider">{data.code} • {data.type}</p>
+                        <p className="font-bold text-slate-900 dark:text-slate-100 ">{data.fullName}</p>
+                        <p className="text-[10px] text-slate-600 dark:text-slate-300 uppercase tracking-wider">{data.code} • {data.type}</p>
                         <div className="pt-1.5 space-y-1 border-t border-slate-100 ">
                           <p className="text-teal-600  font-medium">
                             Mandated Level: <span className="font-bold">Level {data.mandated}</span>

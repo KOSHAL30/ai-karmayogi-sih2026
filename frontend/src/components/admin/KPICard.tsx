@@ -67,7 +67,7 @@ export const KPICard: React.FC<KPICardProps> = ({
           <p className="text-xs font-semibold uppercase tracking-wider text-slate-500  truncate">
             {label}
           </p>
-          <div className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 ">
+          <div className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 ">
             {value}
           </div>
         </div>
@@ -86,7 +86,7 @@ export const KPICard: React.FC<KPICardProps> = ({
                   ? 'bg-emerald-50 /60 text-emerald-700 '
                   : trend === 'down'
                   ? 'bg-rose-50 /60 text-rose-700 '
-                  : 'bg-slate-100  text-slate-600 '
+                  : 'bg-slate-100  text-slate-600 dark:text-slate-300 '
               }`}
             >
               {trend === 'up' && <TrendingUp className="h-2.5 w-2.5" />}
@@ -94,14 +94,14 @@ export const KPICard: React.FC<KPICardProps> = ({
               {trend === 'neutral' && <Minus className="h-2.5 w-2.5" />}
               {trend === 'up' ? '+' : ''}{changePct}%
             </span>
-            <span className="text-[11px] text-slate-600">{period}</span>
+            <span className="text-[11px] text-slate-600 dark:text-slate-300">{period}</span>
           </div>
         ) : (
-          <span className="text-[11px] text-slate-600 truncate">{description || 'Executive metric'}</span>
+          <span className="text-[11px] text-slate-600 dark:text-slate-300 truncate">{description || 'Executive metric'}</span>
         )}
 
         {description && changePct !== undefined && (
-          <span className="hidden sm:inline text-[10px] text-slate-600 truncate max-w-[160px]">
+          <span className="hidden sm:inline text-[10px] text-slate-600 dark:text-slate-300 truncate max-w-[160px]">
             {description}
           </span>
         )}

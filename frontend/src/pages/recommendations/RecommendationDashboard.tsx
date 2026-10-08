@@ -84,7 +84,7 @@ export const RecommendationDashboard: React.FC = () => {
           <p className="mt-1 text-sm">Please ensure you are authenticated and have completed an assessment.</p>
           <button
             onClick={() => refetch()}
-            className="mt-4 rounded-lg bg-red-600 px-4 py-2 text-xs font-semibold text-slate-900 hover:bg-red-700"
+            className="mt-4 rounded-lg bg-red-600 px-4 py-2 text-xs font-semibold text-slate-900 dark:text-slate-100 hover:bg-red-700"
           >
             Retry
           </button>
@@ -102,7 +102,7 @@ export const RecommendationDashboard: React.FC = () => {
       <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
 
         {/* Executive Header Banner */}
-        <div className="relative overflow-hidden rounded-2xl border border-emerald-100 bg-gradient-to-r from-indigo-50 via-white to-teal-50 p-6 text-slate-900 shadow-md sm:p-8">
+        <div className="relative overflow-hidden rounded-2xl border border-emerald-100 bg-gradient-to-r from-indigo-50 via-white to-teal-50 p-6 text-slate-900 dark:text-slate-100 shadow-md sm:p-8">
           <div className="relative z-10 flex flex-col justify-between gap-6 md:flex-row md:items-center">
             <div>
               <div className="flex items-center gap-2">
@@ -120,7 +120,7 @@ export const RecommendationDashboard: React.FC = () => {
                 )}
               </div>
 
-              <h1 className="mt-3 text-2xl font-black tracking-tight sm:text-3xl text-slate-900">
+              <h1 className="mt-3 text-2xl font-black tracking-tight sm:text-3xl text-slate-900 dark:text-slate-100">
                 Personalized Learning Roadmap
               </h1>
               <p className="mt-1.5 max-w-2xl text-xs text-teal-700 sm:text-sm">
@@ -132,7 +132,7 @@ export const RecommendationDashboard: React.FC = () => {
               <button
                 onClick={() => regenerateMutation.mutate()}
                 disabled={regenerateMutation.isPending}
-                className="flex items-center gap-1.5 rounded-xl border border-teal-200 bg-white/80 px-4 py-2.5 text-xs font-semibold text-slate-900 backdrop-blur-md transition hover:bg-white/20 active:scale-95 disabled:opacity-50"
+                className="flex items-center gap-1.5 rounded-xl border border-teal-200 bg-white/80 px-4 py-2.5 text-xs font-semibold text-slate-900 dark:text-slate-100 backdrop-blur-md transition hover:bg-white/20 active:scale-95 disabled:opacity-50"
               >
                 <RefreshCw className={`h-4 w-4 ${regenerateMutation.isPending ? 'animate-spin' : ''}`} />
                 <span>{regenerateMutation.isPending ? 'Recalculating...' : 'Regenerate'}</span>
@@ -161,7 +161,7 @@ export const RecommendationDashboard: React.FC = () => {
               </div>
             </div>
             <div className="mt-2 flex items-baseline gap-2">
-              <span className="text-2xl font-bold text-slate-900 ">
+              <span className="text-2xl font-bold text-slate-900 dark:text-slate-100 ">
                 {overall_competency_score}
               </span>
               <span className="text-xs text-slate-500">/ 100</span>
@@ -182,7 +182,7 @@ export const RecommendationDashboard: React.FC = () => {
               </div>
             </div>
             <div className="mt-2 flex items-baseline gap-2">
-              <span className="text-2xl font-bold text-slate-900 ">
+              <span className="text-2xl font-bold text-slate-900 dark:text-slate-100 ">
                 {top_critical_gaps.length}
               </span>
               <span className="text-xs text-rose-600 font-medium">Critical Gaps</span>
@@ -202,7 +202,7 @@ export const RecommendationDashboard: React.FC = () => {
               </div>
             </div>
             <div className="mt-2 flex items-baseline gap-2">
-              <span className="text-2xl font-bold text-slate-900 ">
+              <span className="text-2xl font-bold text-slate-900 dark:text-slate-100 ">
                 {estimated_completion_hours} hrs
               </span>
               <span className="text-xs text-slate-500">across {total_recommended_modules} modules</span>
@@ -222,7 +222,7 @@ export const RecommendationDashboard: React.FC = () => {
               </div>
             </div>
             <div className="mt-2 flex items-baseline gap-2">
-              <span className="text-2xl font-bold text-slate-900 ">
+              <span className="text-2xl font-bold text-slate-900 dark:text-slate-100 ">
                 {telemetry.completion_percentage}%
               </span>
               <span className="text-xs text-teal-600 font-medium">{telemetry.completed_modules} Completed</span>
@@ -258,7 +258,7 @@ export const RecommendationDashboard: React.FC = () => {
 
                 <div className="mt-2 flex items-center justify-between text-[11px] text-slate-500 ">
                   <span>Demonstrated: Level {gap.demonstrated_level}</span>
-                  <ArrowRight className="h-3 w-3 text-slate-600" />
+                  <ArrowRight className="h-3 w-3 text-slate-600 dark:text-slate-300" />
                   <span>Mandated: Level {gap.mandated_level}</span>
                 </div>
 
@@ -282,7 +282,7 @@ export const RecommendationDashboard: React.FC = () => {
         <div className="mt-10">
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
             <div>
-              <h2 className="text-lg font-bold text-slate-900 ">
+              <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100 ">
                 Curated Learning Tracks
               </h2>
               <p className="text-xs text-slate-500 ">
@@ -297,7 +297,7 @@ export const RecommendationDashboard: React.FC = () => {
                 className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition ${
                   activeTab === 'immediate'
                     ? 'bg-white text-emerald-700 shadow-sm  '
-                    : 'text-slate-600 hover:text-slate-900'
+                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:text-slate-100'
                 }`}
               >
                 Immediate ({roadmaps.immediate.length})
@@ -308,7 +308,7 @@ export const RecommendationDashboard: React.FC = () => {
                 className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition ${
                   activeTab === 'recommended_this_week'
                     ? 'bg-white text-emerald-700 shadow-sm  '
-                    : 'text-slate-600 hover:text-slate-900'
+                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:text-slate-100'
                 }`}
               >
                 This Week ({roadmaps.recommended_this_week.length})
@@ -319,7 +319,7 @@ export const RecommendationDashboard: React.FC = () => {
                 className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition ${
                   activeTab === 'advanced_modules'
                     ? 'bg-white text-emerald-700 shadow-sm  '
-                    : 'text-slate-600 hover:text-slate-900'
+                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:text-slate-100'
                 }`}
               >
                 Advanced ({roadmaps.advanced_modules.length})
@@ -330,7 +330,7 @@ export const RecommendationDashboard: React.FC = () => {
                 className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition ${
                   activeTab === 'optional_enrichment'
                     ? 'bg-white text-emerald-700 shadow-sm  '
-                    : 'text-slate-600 hover:text-slate-900'
+                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:text-slate-100'
                 }`}
               >
                 Optional ({roadmaps.optional_enrichment.length})
@@ -351,7 +351,7 @@ export const RecommendationDashboard: React.FC = () => {
 
           {currentRoadmapList.length === 0 && (
             <div className="rounded-xl border border-dashed border-slate-300 p-12 text-center text-slate-500 ">
-              <BookOpen className="mx-auto h-8 w-8 text-slate-600" />
+              <BookOpen className="mx-auto h-8 w-8 text-slate-600 dark:text-slate-300" />
               <div className="mt-2 text-sm font-semibold">No modules in this category</div>
               <p className="text-xs">Check other tabs or click regenerate to refresh your recommendations.</p>
             </div>
@@ -363,7 +363,7 @@ export const RecommendationDashboard: React.FC = () => {
           <h3 className="text-base font-bold text-emerald-950 ">
             Ready to structure your training into a weekly calendar?
           </h3>
-          <p className="mx-auto mt-1 max-w-xl text-xs text-slate-600 ">
+          <p className="mx-auto mt-1 max-w-xl text-xs text-slate-600 dark:text-slate-300 ">
             Follow the 4-week structured milestone trajectory complete with micro-learning targets, weekly practice scenarios, and verified skill uplift.
           </p>
           <Link

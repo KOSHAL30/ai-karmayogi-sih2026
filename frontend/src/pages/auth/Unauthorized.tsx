@@ -22,7 +22,7 @@ export const Unauthorized: React.FC = () => {
 
         <Card className="shadow-xl border-slate-200/80  text-left">
           <CardHeader className="text-center pb-3">
-            <CardTitle className="text-xl text-slate-900 ">
+            <CardTitle className="text-xl text-slate-900 dark:text-slate-100 ">
               Access Restricted (403)
             </CardTitle>
             <CardDescription>
@@ -30,18 +30,18 @@ export const Unauthorized: React.FC = () => {
             </CardDescription>
           </CardHeader>
 
-          <CardContent className="space-y-3 text-xs text-slate-600 ">
+          <CardContent className="space-y-3 text-xs text-slate-600 dark:text-slate-300 ">
             <div className="p-3 rounded-lg bg-slate-50 /60 border border-slate-200  space-y-1">
               <p>
-                <span className="font-semibold text-slate-900 ">Current Officer:</span>{' '}
+                <span className="font-semibold text-slate-900 dark:text-slate-100 ">Current Officer:</span>{' '}
                 {user?.full_name || 'Authenticated Official'}
               </p>
               <p>
-                <span className="font-semibold text-slate-900 ">Designated Role:</span>{' '}
+                <span className="font-semibold text-slate-900 dark:text-slate-100 ">Designated Role:</span>{' '}
                 <span className="capitalize font-medium text-teal-600 ">{user?.role}</span>
               </p>
               <p>
-                <span className="font-semibold text-slate-900 ">Cadre/Ministry:</span>{' '}
+                <span className="font-semibold text-slate-900 dark:text-slate-100 ">Cadre/Ministry:</span>{' '}
                 {user?.department}
               </p>
             </div>

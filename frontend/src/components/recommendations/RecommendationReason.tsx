@@ -63,7 +63,7 @@ export const RecommendationReason: React.FC<RecommendationReasonProps> = ({
 
       {isExpanded && (
         <div className="mt-3 grid grid-cols-1 gap-2 border-t border-emerald-100/80 pt-2.5 sm:grid-cols-3 ">
-          <div className="flex items-center gap-2 rounded bg-white/60 p-2 /60">
+          <div className="flex items-center gap-2 rounded bg-white/60 dark:bg-white/5 p-2 /60">
             <Scale className="h-4 w-4 text-teal-600" />
             <div>
               <div className="text-[10px] uppercase tracking-wider text-slate-500 ">
@@ -75,7 +75,7 @@ export const RecommendationReason: React.FC<RecommendationReasonProps> = ({
             </div>
           </div>
 
-          <div className="flex items-center gap-2 rounded bg-white/60 p-2 /60">
+          <div className="flex items-center gap-2 rounded bg-white/60 dark:bg-white/5 p-2 /60">
             <Award className="h-4 w-4 text-teal-600" />
             <div>
               <div className="text-[10px] uppercase tracking-wider text-slate-500 ">
@@ -87,7 +87,7 @@ export const RecommendationReason: React.FC<RecommendationReasonProps> = ({
             </div>
           </div>
 
-          <div className="flex items-center gap-2 rounded bg-white/60 p-2 /60">
+          <div className="flex items-center gap-2 rounded bg-white/60 dark:bg-white/5 p-2 /60">
             <ShieldCheck className="h-4 w-4 text-amber-600" />
             <div>
               <div className="text-[10px] uppercase tracking-wider text-slate-500 ">

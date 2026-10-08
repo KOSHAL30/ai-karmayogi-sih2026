@@ -160,7 +160,7 @@ export const MCQStudio: React.FC<MCQStudioProps> = ({ document, onPublished }) =
             <GraduationCap className="h-4 w-4" />
           </div>
           <div>
-            <h3 className="text-xs font-bold text-slate-900 ">
+            <h3 className="text-xs font-bold text-slate-900 dark:text-slate-100 ">
               AI MCQ Generation & Review Studio
             </h3>
             <p className="text-[10px] text-slate-500">
@@ -201,7 +201,7 @@ export const MCQStudio: React.FC<MCQStudioProps> = ({ document, onPublished }) =
                   onClick={() => setNumQuestions(count)}
                   className={`flex-1 py-1.5 text-xs font-semibold rounded-lg border transition-all ${
                     numQuestions === count
-                      ? 'bg-indigo-500 text-slate-900 border-emerald-600 shadow-sm'
+                      ? 'bg-indigo-500 text-slate-900 dark:text-slate-100 border-emerald-600 shadow-sm'
                       : 'bg-white  text-slate-700  border-slate-200  hover:border-emerald-400'
                   }`}
                 >
@@ -220,7 +220,7 @@ export const MCQStudio: React.FC<MCQStudioProps> = ({ document, onPublished }) =
               value={targetCompetency}
               onChange={(e) => setTargetCompetency(e.target.value)}
               placeholder="e.g. Procurement & Contract Management"
-              className="w-full text-xs px-3 py-1.5 rounded-lg border border-slate-300  bg-white  text-slate-900 "
+              className="w-full text-xs px-3 py-1.5 rounded-lg border border-slate-300  bg-white  text-slate-900 dark:text-slate-100 "
             />
           </div>
 
@@ -264,7 +264,7 @@ export const MCQStudio: React.FC<MCQStudioProps> = ({ document, onPublished }) =
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {questions.length === 0 ? (
           <div className="text-center py-16 space-y-3">
-            <GraduationCap className="h-10 w-10 text-slate-600  mx-auto" />
+            <GraduationCap className="h-10 w-10 text-slate-600 dark:text-slate-300  mx-auto" />
             <p className="text-xs text-slate-500">
               No questions generated yet. Configure the batch options above to generate Bloom-classified MCQs grounded in "{document.document_title}".
             </p>
@@ -310,14 +310,14 @@ export const MCQStudio: React.FC<MCQStudioProps> = ({ document, onPublished }) =
                   <button
                     onClick={() => setEditingQuestion(q)}
                     title="Edit question & distractors"
-                    className="p-1 rounded hover:bg-slate-100  text-slate-600 hover:text-teal-600 transition-colors"
+                    className="p-1 rounded hover:bg-slate-100  text-slate-600 dark:text-slate-300 hover:text-teal-600 transition-colors"
                   >
                     <Edit3 className="h-3.5 w-3.5" />
                   </button>
                   <button
                     onClick={() => handleDeleteQuestion(q.id)}
                     title="Remove question"
-                    className="p-1 rounded hover:bg-slate-100  text-slate-600 hover:text-rose-500 transition-colors"
+                    className="p-1 rounded hover:bg-slate-100  text-slate-600 dark:text-slate-300 hover:text-rose-500 transition-colors"
                   >
                     <Trash2 className="h-3.5 w-3.5" />
                   </button>
@@ -325,7 +325,7 @@ export const MCQStudio: React.FC<MCQStudioProps> = ({ document, onPublished }) =
               </div>
 
               {/* Stem */}
-              <p className="text-xs font-semibold text-slate-900  leading-relaxed">
+              <p className="text-xs font-semibold text-slate-900 dark:text-slate-100  leading-relaxed">
                 {q.question_stem}
               </p>
 
@@ -346,7 +346,7 @@ export const MCQStudio: React.FC<MCQStudioProps> = ({ document, onPublished }) =
                     <div className="flex-1">
                       <span>{opt.option_text}</span>
                       {opt.distractor_rationale && (
-                        <p className="text-[10px] text-slate-600 italic mt-0.5">
+                        <p className="text-[10px] text-slate-600 dark:text-slate-300 italic mt-0.5">
                           Rationale: {opt.distractor_rationale}
                         </p>
                       )}
@@ -362,12 +362,12 @@ export const MCQStudio: React.FC<MCQStudioProps> = ({ document, onPublished }) =
 
               {/* Footer Citations & Explanation */}
               <div className="pt-2 border-t border-slate-100  text-[11px] space-y-1">
-                <p className="text-slate-600 ">
+                <p className="text-slate-600 dark:text-slate-300 ">
                   <span className="font-bold text-teal-600 ">Explanation: </span>
                   {q.pedagogical_explanation}
                 </p>
                 <p className="text-slate-500 font-mono text-[10px] flex items-center gap-1">
-                  <BookOpen className="h-3 w-3 text-slate-600" />
+                  <BookOpen className="h-3 w-3 text-slate-600 dark:text-slate-300" />
                   Citation: {q.source_citation}
                 </p>
               </div>

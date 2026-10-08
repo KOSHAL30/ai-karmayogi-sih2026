@@ -30,7 +30,7 @@ export const TrendChart: React.FC<TrendChartProps> = ({ data }) => {
         <div className="space-y-1">
           <div className="flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-indigo-500 animate-pulse" />
-            <h3 className="text-sm font-bold text-slate-900 ">
+            <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 ">
               Cadre Learning & Diagnostic Adoption Trajectory
             </h3>
           </div>
@@ -45,7 +45,7 @@ export const TrendChart: React.FC<TrendChartProps> = ({ data }) => {
             className={`px-2.5 py-1 rounded-lg font-medium transition-colors ${
               metric === 'all'
                 ? 'bg-white  text-teal-600  shadow-sm font-bold'
-                : 'text-slate-600  hover:text-slate-900'
+                : 'text-slate-600 dark:text-slate-300  hover:text-slate-900 dark:text-slate-100'
             }`}
           >
             All Metrics
@@ -55,7 +55,7 @@ export const TrendChart: React.FC<TrendChartProps> = ({ data }) => {
             className={`px-2.5 py-1 rounded-lg font-medium transition-colors ${
               metric === 'learners'
                 ? 'bg-white  text-teal-600  shadow-sm font-bold'
-                : 'text-slate-600  hover:text-slate-900'
+                : 'text-slate-600 dark:text-slate-300  hover:text-slate-900 dark:text-slate-100'
             }`}
           >
             Active Learners
@@ -65,7 +65,7 @@ export const TrendChart: React.FC<TrendChartProps> = ({ data }) => {
             className={`px-2.5 py-1 rounded-lg font-medium transition-colors ${
               metric === 'courses'
                 ? 'bg-white  text-teal-600  shadow-sm font-bold'
-                : 'text-slate-600  hover:text-slate-900'
+                : 'text-slate-600 dark:text-slate-300  hover:text-slate-900 dark:text-slate-100'
             }`}
           >
             Courses
@@ -75,7 +75,7 @@ export const TrendChart: React.FC<TrendChartProps> = ({ data }) => {
             className={`px-2.5 py-1 rounded-lg font-medium transition-colors ${
               metric === 'assessments'
                 ? 'bg-white  text-teal-600  shadow-sm font-bold'
-                : 'text-slate-600  hover:text-slate-900'
+                : 'text-slate-600 dark:text-slate-300  hover:text-slate-900 dark:text-slate-100'
             }`}
           >
             Assessments

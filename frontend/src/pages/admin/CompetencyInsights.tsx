@@ -94,7 +94,7 @@ export const CompetencyInsights: React.FC = () => {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8">
       {/* Executive Header Banner */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-50 via-white to-teal-50 p-8 text-slate-900 border border-slate-200 shadow-xl">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-50 via-white to-teal-50 p-8 text-slate-900 dark:text-slate-100 border border-slate-200 shadow-xl">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 rounded-full bg-indigo-500/20 px-3 py-0.5 text-xs font-semibold text-teal-700 border border-teal-200">
@@ -104,7 +104,7 @@ export const CompetencyInsights: React.FC = () => {
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
               Competency Intelligence & Capability Deficits
             </h1>
-            <p className="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
               Longitudinal analysis of Mandated vs. Demonstrated proficiency across 10 core governance
               competencies. Triangulate training interventions against national capacity benchmarks.
             </p>
@@ -114,7 +114,7 @@ export const CompetencyInsights: React.FC = () => {
             <Link to="/admin">
               <Button
                 variant="outline"
-                className="bg-white/60 border-slate-200 text-slate-600 hover:bg-white text-xs h-9 font-semibold"
+                className="bg-white/60 dark:bg-white/5 border-slate-200 text-slate-600 dark:text-slate-300 hover:bg-white text-xs h-9 font-semibold"
               >
                 Executive Dashboard
               </Button>
@@ -138,7 +138,7 @@ export const CompetencyInsights: React.FC = () => {
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-600">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
                   {p.pillar_name} Pillar
                 </span>
                 <span
@@ -154,10 +154,10 @@ export const CompetencyInsights: React.FC = () => {
 
               <div className="flex items-baseline justify-between">
                 <div>
-                  <span className="text-3xl font-extrabold text-slate-900 ">
+                  <span className="text-3xl font-extrabold text-slate-900 dark:text-slate-100 ">
                     {p.demonstrated_avg.toFixed(1)}
                   </span>
-                  <span className="text-xs text-slate-600 font-semibold ml-1">
+                  <span className="text-xs text-slate-600 dark:text-slate-300 font-semibold ml-1">
                     / {p.mandated_avg.toFixed(1)} Mandated
                   </span>
                 </div>
@@ -191,7 +191,7 @@ export const CompetencyInsights: React.FC = () => {
         <div className="lg:col-span-7 rounded-2xl border border-slate-200  bg-white  p-6 shadow-sm space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100 ">
             <div>
-              <h3 className="text-sm font-bold text-slate-900  flex items-center gap-2">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100  flex items-center gap-2">
                 <Target className="h-4 w-4 text-teal-600" />
                 10-Axis Competency Radar (FRAC Mandated vs Demonstrated)
               </h3>
@@ -209,7 +209,7 @@ export const CompetencyInsights: React.FC = () => {
                   className={`px-2 py-0.5 rounded-md font-medium transition-all ${
                     activePillarFilter === mode
                       ? 'bg-white  text-teal-600  shadow-xs'
-                      : 'text-slate-600  hover:text-slate-900'
+                      : 'text-slate-600 dark:text-slate-300  hover:text-slate-900 dark:text-slate-100'
                   }`}
                 >
                   {mode === 'ALL' ? 'All' : mode.slice(0, 4)}
@@ -283,7 +283,7 @@ export const CompetencyInsights: React.FC = () => {
         {/* Ranked Critical Capability Deficits (5 cols) */}
         <div className="lg:col-span-5 rounded-2xl border border-slate-200  bg-white  p-6 shadow-sm flex flex-col justify-between space-y-4">
           <div className="space-y-1 pb-3 border-b border-slate-100 ">
-            <h3 className="text-sm font-bold text-slate-900  flex items-center gap-2">
+            <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100  flex items-center gap-2">
               <ShieldAlert className="h-4 w-4 text-rose-500" />
               Ranked Capability Deficits (Action Required)
             </h3>
@@ -304,11 +304,11 @@ export const CompetencyInsights: React.FC = () => {
                       <span className="text-[10px] font-mono font-bold text-teal-600 ">
                         {item.competency_code}
                       </span>
-                      <span className="text-[10px] px-1.5 py-0.2 rounded font-semibold bg-slate-200  text-slate-600 ">
+                      <span className="text-[10px] px-1.5 py-0.2 rounded font-semibold bg-slate-200  text-slate-600 dark:text-slate-300 ">
                         {item.pillar}
                       </span>
                     </div>
-                    <h4 className="text-xs font-bold text-slate-900  mt-0.5">
+                    <h4 className="text-xs font-bold text-slate-900 dark:text-slate-100  mt-0.5">
                       {item.competency_name}
                     </h4>
                   </div>
@@ -354,7 +354,7 @@ export const CompetencyInsights: React.FC = () => {
       <div className="rounded-2xl border border-slate-200  bg-white  p-6 shadow-sm space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100 ">
           <div>
-            <h3 className="text-sm font-bold text-slate-900  flex items-center gap-2">
+            <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100  flex items-center gap-2">
               <TrendingUp className="h-4 w-4 text-teal-600" />
               Longitudinal Competency Improvement Trajectory (Quarterly Progression)
             </h3>

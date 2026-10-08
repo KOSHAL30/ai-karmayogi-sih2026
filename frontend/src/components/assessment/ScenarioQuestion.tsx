@@ -100,7 +100,7 @@ export const ScenarioQuestion: React.FC<ScenarioQuestionProps> = ({
               className={`p-1.5 rounded-lg border transition-colors ${
                 isBookmarked
                   ? 'bg-amber-50 /50 border-amber-300  text-amber-600 '
-                  : 'border-slate-200  text-slate-600 hover:text-slate-600'
+                  : 'border-slate-200  text-slate-600 dark:text-slate-300 hover:text-slate-600 dark:text-slate-300'
               }`}
             >
               <Bookmark className="h-4 w-4" fill={isBookmarked ? 'currentColor' : 'none'} />
@@ -126,7 +126,7 @@ export const ScenarioQuestion: React.FC<ScenarioQuestionProps> = ({
         <div className="space-y-3">
           <div className="flex items-center justify-between text-xs font-semibold text-slate-500 ">
             <span>Select the most procedurally and ethically appropriate course of action:</span>
-            <span className="hidden sm:inline text-[11px] text-slate-600">Press keys 1-4 or A-D to select</span>
+            <span className="hidden sm:inline text-[11px] text-slate-600 dark:text-slate-300">Press keys 1-4 or A-D to select</span>
           </div>
 
           <div className="space-y-2.5" role="radiogroup" aria-label="Assessment Options">
@@ -150,8 +150,8 @@ export const ScenarioQuestion: React.FC<ScenarioQuestionProps> = ({
                   <span
                     className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-lg text-xs font-bold border transition-colors ${
                       isSelected
-                        ? 'bg-indigo-500 text-slate-900 border-emerald-600'
-                        : 'bg-slate-100  text-slate-600  border-slate-200  group-hover:border-slate-400'
+                        ? 'bg-indigo-500 text-slate-900 dark:text-slate-100 border-emerald-600'
+                        : 'bg-slate-100  text-slate-600 dark:text-slate-300  border-slate-200  group-hover:border-slate-400'
                     }`}
                   >
                     {optionLetters[idx]}
@@ -168,7 +168,7 @@ export const ScenarioQuestion: React.FC<ScenarioQuestionProps> = ({
                   <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded border transition-colors shrink-0 ${
                     isSelected
                       ? 'border-emerald-300 text-emerald-700   bg-emerald-100/50 /50'
-                      : 'border-slate-200  text-slate-600 opacity-60 group-hover:opacity-100'
+                      : 'border-slate-200  text-slate-600 dark:text-slate-300 opacity-60 group-hover:opacity-100'
                   }`}>
                     [{idx + 1}]
                   </span>
@@ -182,10 +182,10 @@ export const ScenarioQuestion: React.FC<ScenarioQuestionProps> = ({
       {/* Statutory Source Citation Footer */}
       <CardFooter className="bg-slate-50/50 /40 border-t border-slate-200/80 /80 py-3 px-6 flex items-center justify-between text-xs text-slate-500 ">
         <div className="flex items-center gap-1.5">
-          <Scale className="h-3.5 w-3.5 text-slate-600" />
+          <Scale className="h-3.5 w-3.5 text-slate-600 dark:text-slate-300" />
           <span>Statutory Authority: <span className="font-semibold text-slate-700 ">{question.source_citation}</span></span>
         </div>
-        <div className="flex items-center gap-1.5 text-[11px] text-slate-600">
+        <div className="flex items-center gap-1.5 text-[11px] text-slate-600 dark:text-slate-300">
           <ShieldCheck className="h-3.5 w-3.5 text-teal-600" />
           <span>FRAC Formative Diagnostic</span>
         </div>

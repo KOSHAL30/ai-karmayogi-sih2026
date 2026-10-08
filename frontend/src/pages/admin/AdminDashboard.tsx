@@ -86,7 +86,7 @@ export const AdminDashboard: React.FC = () => {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8">
       {/* Executive Saffron & emerald Banner */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-50 via-white to-teal-50 p-8 text-slate-900 border border-slate-200 shadow-2xl">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-50 via-white to-teal-50 p-8 text-slate-900 dark:text-slate-100 border border-slate-200 shadow-2xl">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2 max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-indigo-500/20 px-3 py-0.5 text-xs font-semibold text-teal-700 border border-teal-200">
@@ -98,7 +98,7 @@ export const AdminDashboard: React.FC = () => {
               Executive Cadre Analytics & Governance Intelligence
             </h1>
 
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
               Real-time executive oversight of civil service competency diagnostics, micro-learning adoptions, departmental heatmaps, and verifiable credentialing across Central Ministries.
             </p>
           </div>
@@ -111,7 +111,7 @@ export const AdminDashboard: React.FC = () => {
               </Button>
             </Link>
             <Link to="/admin/competencies">
-              <Button variant="outline" className="text-slate-900 border-slate-200 hover:bg-white/80 text-xs flex items-center gap-1.5">
+              <Button variant="outline" className="text-slate-900 dark:text-slate-100 border-slate-200 hover:bg-white/80 text-xs flex items-center gap-1.5">
                 <BarChart3 className="h-3.5 w-3.5" />
                 Competency Radar
               </Button>
@@ -119,7 +119,7 @@ export const AdminDashboard: React.FC = () => {
             <Button
               variant="outline"
               onClick={loadDashboard}
-              className="text-slate-900 border-slate-200 hover:bg-white/80 text-xs p-2"
+              className="text-slate-900 dark:text-slate-100 border-slate-200 hover:bg-white/80 text-xs p-2"
               title="Refresh Analytics"
             >
               <RefreshCw className="h-3.5 w-3.5" />
@@ -206,7 +206,7 @@ export const AdminDashboard: React.FC = () => {
         <div className="lg:col-span-7 rounded-2xl border border-slate-200  bg-white  p-6 shadow-sm space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-sm font-bold text-slate-900  flex items-center gap-2">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100  flex items-center gap-2">
                 <BarChart3 className="h-4 w-4 text-teal-600" />
                 Departmental Proficiency Benchmark (Top 8 Departments)
               </h3>
@@ -261,7 +261,7 @@ export const AdminDashboard: React.FC = () => {
         {/* Right 5 Cols: Competency Distribution & Completion Funnel */}
         <div className="lg:col-span-5 flex flex-col justify-between rounded-2xl border border-slate-200  bg-white  p-6 shadow-sm space-y-4">
           <div>
-            <h3 className="text-sm font-bold text-slate-900  flex items-center gap-2">
+            <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100  flex items-center gap-2">
               <PieChart className="h-4 w-4 text-teal-600" />
               Cadre Competency Distribution
             </h3>
@@ -279,7 +279,7 @@ export const AdminDashboard: React.FC = () => {
                     {tier.name}
                   </span>
                 </div>
-                <span className="text-base font-extrabold text-slate-900 ">
+                <span className="text-base font-extrabold text-slate-900 dark:text-slate-100 ">
                   {tier.value}%
                 </span>
               </div>
@@ -288,7 +288,7 @@ export const AdminDashboard: React.FC = () => {
 
           {/* Completion Funnel Progress */}
           <div className="pt-3 border-t border-slate-100  space-y-2">
-            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-600">
+            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
               Cadre Transformation Funnel
             </p>
             <div className="space-y-1.5 text-xs">

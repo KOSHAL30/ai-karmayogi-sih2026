@@ -99,7 +99,7 @@ export const DocumentStudio: React.FC = () => {
   return (
     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 space-y-6">
       {/* Studio Header Banner */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-50 via-white to-teal-50 p-6 text-slate-900 border border-slate-200 shadow-xl">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-50 via-white to-teal-50 p-6 text-slate-900 dark:text-slate-100 border border-slate-200 shadow-xl">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-1">
             <div className="inline-flex items-center gap-2 rounded-full bg-indigo-500/20 px-3 py-0.5 text-xs font-semibold text-teal-700 border border-teal-200">
@@ -109,7 +109,7 @@ export const DocumentStudio: React.FC = () => {
             <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight">
               Government PDF Intelligence & AI MCQ Studio
             </h1>
-            <p className="text-xs text-slate-600">
+            <p className="text-xs text-slate-600 dark:text-slate-300">
               Upload Central/State Acts, Rules, OMs and Manuals. Extract statutory breadcrumbs, run grounded RAG queries, and generate Bloom-classified MCQs for Mission Karmayogi.
             </p>
           </div>
@@ -125,7 +125,7 @@ export const DocumentStudio: React.FC = () => {
             <Button
               variant="outline"
               onClick={loadDocuments}
-              className="text-slate-900 border-slate-200 hover:bg-white/80 text-xs flex items-center gap-1.5"
+              className="text-slate-900 dark:text-slate-100 border-slate-200 hover:bg-white/80 text-xs flex items-center gap-1.5"
             >
               <RefreshCw className="h-3.5 w-3.5" />
               Refresh
@@ -142,7 +142,7 @@ export const DocumentStudio: React.FC = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <BookOpen className="h-4 w-4 text-teal-600" />
-                <h2 className="text-xs font-bold text-slate-900  uppercase tracking-wider">
+                <h2 className="text-xs font-bold text-slate-900 dark:text-slate-100  uppercase tracking-wider">
                   Knowledge Base ({filteredDocs.length})
                 </h2>
               </div>
@@ -150,13 +150,13 @@ export const DocumentStudio: React.FC = () => {
 
             {/* Search Input */}
             <div className="relative">
-              <Search className="absolute left-2.5 top-2.5 h-3.5 w-3.5 text-slate-600" />
+              <Search className="absolute left-2.5 top-2.5 h-3.5 w-3.5 text-slate-600 dark:text-slate-300" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search documents, OMs..."
-                className="w-full text-xs pl-8 pr-3 py-1.5 rounded-lg border border-slate-200  bg-white  text-slate-900  focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                className="w-full text-xs pl-8 pr-3 py-1.5 rounded-lg border border-slate-200  bg-white  text-slate-900 dark:text-slate-100  focus:outline-none focus:ring-1 focus:ring-emerald-500"
               />
             </div>
 
@@ -164,7 +164,7 @@ export const DocumentStudio: React.FC = () => {
             <select
               value={selectedType}
               onChange={(e) => setSelectedType(e.target.value)}
-              className="w-full text-xs px-2.5 py-1.5 rounded-lg border border-slate-200  bg-white  text-slate-900  focus:outline-none"
+              className="w-full text-xs px-2.5 py-1.5 rounded-lg border border-slate-200  bg-white  text-slate-900 dark:text-slate-100  focus:outline-none"
             >
               <option value="ALL">All Document Types</option>
               <option value="ACT">Statutory Acts</option>
@@ -178,9 +178,9 @@ export const DocumentStudio: React.FC = () => {
           {/* Document List */}
           <div className="flex-1 overflow-y-auto p-2.5 space-y-2">
             {isLoading ? (
-              <div className="py-12 text-center text-xs text-slate-600">Loading catalog...</div>
+              <div className="py-12 text-center text-xs text-slate-600 dark:text-slate-300">Loading catalog...</div>
             ) : filteredDocs.length === 0 ? (
-              <div className="py-12 text-center text-xs text-slate-600 space-y-2">
+              <div className="py-12 text-center text-xs text-slate-600 dark:text-slate-300 space-y-2">
                 <p>No documents found.</p>
                 <Button
                   size="sm"
@@ -218,7 +218,7 @@ export const DocumentStudio: React.FC = () => {
                       />
                     </div>
 
-                    <h3 className="text-xs font-bold text-slate-900  line-clamp-2">
+                    <h3 className="text-xs font-bold text-slate-900 dark:text-slate-100  line-clamp-2">
                       {doc.document_title}
                     </h3>
 
@@ -226,7 +226,7 @@ export const DocumentStudio: React.FC = () => {
                       {doc.ministry}
                     </p>
 
-                    <div className="flex items-center justify-between pt-1 text-[9px] text-slate-600 font-mono">
+                    <div className="flex items-center justify-between pt-1 text-[9px] text-slate-600 dark:text-slate-300 font-mono">
                       <span>{doc.total_chunks} Chunks</span>
                       <span>{doc.total_pages} Pages</span>
                     </div>
@@ -246,8 +246,8 @@ export const DocumentStudio: React.FC = () => {
                 onClick={() => setCenterTab('viewer')}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                   centerTab === 'viewer'
-                    ? 'bg-indigo-500 text-slate-900 shadow-sm'
-                    : 'text-slate-600  hover:text-slate-900'
+                    ? 'bg-indigo-500 text-slate-900 dark:text-slate-100 shadow-sm'
+                    : 'text-slate-600 dark:text-slate-300  hover:text-slate-900 dark:text-slate-100'
                 }`}
               >
                 <FileText className="h-3.5 w-3.5" />
@@ -258,8 +258,8 @@ export const DocumentStudio: React.FC = () => {
                 onClick={() => setCenterTab('rag')}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                   centerTab === 'rag'
-                    ? 'bg-indigo-500 text-slate-900 shadow-sm'
-                    : 'text-slate-600  hover:text-slate-900'
+                    ? 'bg-indigo-500 text-slate-900 dark:text-slate-100 shadow-sm'
+                    : 'text-slate-600 dark:text-slate-300  hover:text-slate-900 dark:text-slate-100'
                 }`}
               >
                 <Sparkles className="h-3.5 w-3.5" />
@@ -270,8 +270,8 @@ export const DocumentStudio: React.FC = () => {
                 onClick={() => setCenterTab('mcq')}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                   centerTab === 'mcq'
-                    ? 'bg-indigo-500 text-slate-900 shadow-sm'
-                    : 'text-slate-600  hover:text-slate-900'
+                    ? 'bg-indigo-500 text-slate-900 dark:text-slate-100 shadow-sm'
+                    : 'text-slate-600 dark:text-slate-300  hover:text-slate-900 dark:text-slate-100'
                 }`}
               >
                 <GraduationCap className="h-3.5 w-3.5" />
@@ -302,7 +302,7 @@ export const DocumentStudio: React.FC = () => {
               )
             ) : (
               <div className="flex flex-col items-center justify-center h-full bg-white  rounded-2xl border border-slate-200  p-8 text-center text-slate-500 space-y-3">
-                <FileText className="h-10 w-10 text-slate-600 " />
+                <FileText className="h-10 w-10 text-slate-600 dark:text-slate-300 " />
                 <p className="text-xs">Select or upload a sovereign document to begin.</p>
                 <Button
                   onClick={() => setShowUploadModal(true)}
@@ -325,8 +325,8 @@ export const DocumentStudio: React.FC = () => {
               }}
             />
           ) : (
-            <div className="flex flex-col items-center justify-center h-full bg-white  rounded-2xl border border-slate-200  p-6 text-center text-slate-600 text-xs">
-              <Info className="h-6 w-6 text-slate-600  mb-2" />
+            <div className="flex flex-col items-center justify-center h-full bg-white  rounded-2xl border border-slate-200  p-6 text-center text-slate-600 dark:text-slate-300 text-xs">
+              <Info className="h-6 w-6 text-slate-600 dark:text-slate-300  mb-2" />
               <span>Select a document to inspect 6-part AI summary & citations.</span>
             </div>
           )}

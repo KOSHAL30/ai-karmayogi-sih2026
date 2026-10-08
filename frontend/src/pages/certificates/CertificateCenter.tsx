@@ -130,7 +130,7 @@ export const CertificateCenter: React.FC = () => {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8">
       {/* Executive Saffron & emerald Banner */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-50 via-white to-teal-50 p-8 text-slate-900 border border-slate-200 shadow-xl">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-50 via-white to-teal-50 p-8 text-slate-900 dark:text-slate-100 border border-slate-200 shadow-xl">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 rounded-full bg-amber-500/20 px-3 py-0.5 text-xs font-semibold text-amber-300 border border-amber-400/30">
@@ -140,7 +140,7 @@ export const CertificateCenter: React.FC = () => {
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
               Sovereign Digital Credentials Vault
             </h1>
-            <p className="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
               Cryptographically verified certificates of competency for civil services officials. Each credential
               carries a sovereign SHA-256 verification hash, FRAC alignment record, and tamper-evident QR payload.
             </p>
@@ -154,7 +154,7 @@ export const CertificateCenter: React.FC = () => {
                 setVerificationError(null);
               }}
               variant="outline"
-              className="bg-white/60 border-slate-200 text-slate-600 hover:bg-white text-xs h-9 font-semibold flex items-center gap-1.5"
+              className="bg-white/60 dark:bg-white/5 border-slate-200 text-slate-600 dark:text-slate-300 hover:bg-white text-xs h-9 font-semibold flex items-center gap-1.5"
             >
               <QrCode className="h-3.5 w-3.5 text-teal-700" />
               <span>Verify Any Certificate</span>
@@ -180,7 +180,7 @@ export const CertificateCenter: React.FC = () => {
               <Award className="h-4 w-4" />
             </div>
           </div>
-          <div className="text-2xl font-extrabold text-slate-900 ">
+          <div className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 ">
             {certificates.length}
           </div>
           <p className="text-[11px] text-slate-500">Government recognized achievements</p>
@@ -193,7 +193,7 @@ export const CertificateCenter: React.FC = () => {
               <Sparkles className="h-4 w-4" />
             </div>
           </div>
-          <div className="text-2xl font-extrabold text-slate-900 ">
+          <div className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 ">
             {totalCredits} Credits
           </div>
           <p className="text-[11px] text-teal-600  font-semibold">
@@ -233,7 +233,7 @@ export const CertificateCenter: React.FC = () => {
               className={`px-3 py-1.5 rounded-lg font-semibold transition-all ${
                 selectedType === tab.id
                   ? 'bg-white  text-teal-600  shadow-sm'
-                  : 'text-slate-600  hover:text-slate-900'
+                  : 'text-slate-600 dark:text-slate-300  hover:text-slate-900 dark:text-slate-100'
               }`}
             >
               {tab.label}
@@ -243,13 +243,13 @@ export const CertificateCenter: React.FC = () => {
 
         {/* Search Input */}
         <div className="relative min-w-[240px]">
-          <Search className="h-3.5 w-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-600" />
+          <Search className="h-3.5 w-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300" />
           <input
             type="text"
             placeholder="Search by title, number, officer..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-8 pr-3 py-1.5 rounded-xl text-xs bg-white  border border-slate-200  text-slate-900  focus:outline-none focus:ring-1 focus:ring-emerald-500 shadow-xs"
+            className="w-full pl-8 pr-3 py-1.5 rounded-xl text-xs bg-white  border border-slate-200  text-slate-900 dark:text-slate-100  focus:outline-none focus:ring-1 focus:ring-emerald-500 shadow-xs"
           />
         </div>
       </div>
@@ -263,11 +263,11 @@ export const CertificateCenter: React.FC = () => {
         </div>
       ) : filteredCertificates.length === 0 ? (
         <div className="rounded-2xl border border-dashed border-slate-300  p-12 text-center space-y-3">
-          <Award className="h-10 w-10 text-slate-600  mx-auto" />
+          <Award className="h-10 w-10 text-slate-600 dark:text-slate-300  mx-auto" />
           <h3 className="text-sm font-bold text-slate-700 ">
             No Credentials Found
           </h3>
-          <p className="text-xs text-slate-600 max-w-sm mx-auto">
+          <p className="text-xs text-slate-600 dark:text-slate-300 max-w-sm mx-auto">
             No certificates match the selected filters. Complete a diagnostic assessment or iGOT course to receive official certification.
           </p>
         </div>
@@ -298,13 +298,13 @@ export const CertificateCenter: React.FC = () => {
             <div className="flex items-center justify-between pb-3 border-b border-slate-100 ">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="h-5 w-5 text-teal-600" />
-                <h3 className="text-base font-bold text-slate-900 ">
+                <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 ">
                   Sovereign Credential Verification
                 </h3>
               </div>
               <button
                 onClick={() => setVerifyDrawerOpen(false)}
-                className="p-1 rounded-lg text-slate-600 hover:text-slate-600  hover:bg-slate-100"
+                className="p-1 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-600 dark:text-slate-300  hover:bg-slate-100"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -320,7 +320,7 @@ export const CertificateCenter: React.FC = () => {
                 placeholder="e.g. KMY-2026-..."
                 value={verificationInput}
                 onChange={(e) => setVerificationInput(e.target.value)}
-                className="flex-1 px-3 py-2 text-xs rounded-xl bg-slate-50  border border-slate-200  text-slate-900  focus:outline-none focus:ring-1 focus:ring-emerald-500 font-mono"
+                className="flex-1 px-3 py-2 text-xs rounded-xl bg-slate-50  border border-slate-200  text-slate-900 dark:text-slate-100  focus:outline-none focus:ring-1 focus:ring-emerald-500 font-mono"
               />
               <Button
                 type="submit"
@@ -348,11 +348,11 @@ export const CertificateCenter: React.FC = () => {
                 </div>
 
                 <div className="space-y-1 text-xs">
-                  <p className="font-bold text-slate-900 ">
+                  <p className="font-bold text-slate-900 dark:text-slate-100 ">
                     {verificationResult.title}
                   </p>
-                  <p className="text-slate-600 ">
-                    Awarded to: <strong className="text-slate-900 ">{verificationResult.officer_name}</strong> ({verificationResult.designation})
+                  <p className="text-slate-600 dark:text-slate-300 ">
+                    Awarded to: <strong className="text-slate-900 dark:text-slate-100 ">{verificationResult.officer_name}</strong> ({verificationResult.designation})
                   </p>
                   <p className="text-slate-500  text-[11px]">
                     Department: {verificationResult.department} • {verificationResult.ministry}
@@ -361,7 +361,7 @@ export const CertificateCenter: React.FC = () => {
                     Issued: {new Date(verificationResult.issued_at).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}
                   </p>
                   <div className="pt-2">
-                    <span className="text-[10px] font-mono text-slate-600 block truncate">
+                    <span className="text-[10px] font-mono text-slate-600 dark:text-slate-300 block truncate">
                       Hash: {verificationResult.verification_code}
                     </span>
                   </div>
@@ -392,13 +392,13 @@ export const CertificateCenter: React.FC = () => {
             <div className="flex items-center justify-between pb-3 border-b border-slate-100 ">
               <div className="flex items-center gap-2">
                 <Sparkles className="h-5 w-5 text-amber-500" />
-                <h3 className="text-base font-bold text-slate-900 ">
+                <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 ">
                   Issue Verifiable Digital Credential
                 </h3>
               </div>
               <button
                 onClick={() => setIssueModalOpen(false)}
-                className="p-1 rounded-lg text-slate-600 hover:text-slate-600  hover:bg-slate-100"
+                className="p-1 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-600 dark:text-slate-300  hover:bg-slate-100"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -418,7 +418,7 @@ export const CertificateCenter: React.FC = () => {
                   required
                   value={newCertTitle}
                   onChange={(e) => setNewCertTitle(e.target.value)}
-                  className="w-full px-3 py-2 text-xs rounded-xl bg-slate-50  border border-slate-200  text-slate-900  focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                  className="w-full px-3 py-2 text-xs rounded-xl bg-slate-50  border border-slate-200  text-slate-900 dark:text-slate-100  focus:outline-none focus:ring-1 focus:ring-emerald-500"
                 />
               </div>
 
@@ -429,7 +429,7 @@ export const CertificateCenter: React.FC = () => {
                 <select
                   value={newCertType}
                   onChange={(e) => setNewCertType(e.target.value as any)}
-                  className="w-full px-3 py-2 text-xs rounded-xl bg-slate-50  border border-slate-200  text-slate-900  focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                  className="w-full px-3 py-2 text-xs rounded-xl bg-slate-50  border border-slate-200  text-slate-900 dark:text-slate-100  focus:outline-none focus:ring-1 focus:ring-emerald-500"
                 >
                   <option value="COURSE_COMPLETION">Course Mastery (iGOT Karmayogi)</option>
                   <option value="ASSESSMENT_MASTERY">Diagnostic Assessment Mastery</option>

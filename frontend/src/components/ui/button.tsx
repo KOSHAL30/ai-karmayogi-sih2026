@@ -14,15 +14,15 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantStyles = {
       primary:
-        "bg-indigo-500 text-slate-900 hover:bg-emerald-700 focus-visible:ring-emerald-500 shadow-sm shadow-emerald-600/20",
+        "bg-indigo-500 text-slate-900 dark:text-slate-100 hover:bg-emerald-700 focus-visible:ring-emerald-500 shadow-sm shadow-emerald-600/20",
       secondary:
-        "bg-slate-100  text-slate-900  hover:bg-slate-200  focus-visible:ring-slate-400",
+        "bg-slate-100  text-slate-900 dark:text-slate-100  hover:bg-slate-200  focus-visible:ring-slate-400",
       outline:
         "border border-slate-300  text-slate-800  hover:bg-slate-50  focus-visible:ring-slate-400",
       ghost:
         "text-slate-700  hover:bg-slate-100  focus-visible:ring-slate-400",
       danger:
-        "bg-rose-600 text-slate-900 hover:bg-rose-700 focus-visible:ring-rose-500 shadow-sm shadow-rose-600/20",
+        "bg-rose-600 text-slate-900 dark:text-slate-100 hover:bg-rose-700 focus-visible:ring-rose-500 shadow-sm shadow-rose-600/20",
     };
 
     const sizeStyles = {

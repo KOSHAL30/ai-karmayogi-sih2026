@@ -84,7 +84,7 @@ export const Register: React.FC = () => {
           <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-500 text-white shadow-lg shadow-emerald-600/25">
             <Compass className="h-6 w-6" />
           </div>
-          <h1 className="text-2xl font-extrabold tracking-tight text-slate-900 ">
+          <h1 className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 ">
             Official Registration
           </h1>
           <p className="text-xs text-slate-500 ">
@@ -167,7 +167,7 @@ export const Register: React.FC = () => {
                     id="roleCode"
                     value={formData.roleCode}
                     onChange={(e) => setFormData({ ...formData, roleCode: e.target.value })}
-                    className="flex h-10 w-full rounded-lg border border-slate-300  bg-white  px-3 py-2 text-sm text-slate-900  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                    className="flex h-10 w-full rounded-lg border border-slate-300  bg-white  px-3 py-2 text-sm text-slate-900 dark:text-slate-100  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
                   >
                     <option value="learner">Learner (Civil Services Official)</option>
                     <option value="trainer">Trainer (Capacity Building Faculty)</option>
@@ -183,7 +183,7 @@ export const Register: React.FC = () => {
                     id="departmentCode"
                     value={formData.departmentCode}
                     onChange={(e) => setFormData({ ...formData, departmentCode: e.target.value })}
-                    className="flex h-10 w-full rounded-lg border border-slate-300  bg-white  px-3 py-2 text-sm text-slate-900  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                    className="flex h-10 w-full rounded-lg border border-slate-300  bg-white  px-3 py-2 text-sm text-slate-900 dark:text-slate-100  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
                   >
                     <option value="DEPT-DOPT">Personnel & Training (DoPT)</option>
                     <option value="DEPT-MEITY">Electronics & IT (MeitY)</option>
@@ -224,7 +224,7 @@ export const Register: React.FC = () => {
 
               {/* Password complexity hints */}
               <div className="rounded-lg bg-slate-50 /50 p-3 text-[11px] space-y-1 border border-slate-200 ">
-                <p className="font-semibold text-slate-600 ">Security Requirement Checklist:</p>
+                <p className="font-semibold text-slate-600 dark:text-slate-300 ">Security Requirement Checklist:</p>
                 <div className="grid grid-cols-2 gap-1 text-slate-500 ">
                   <span className={hasMinLength ? 'text-teal-600 font-medium' : ''}>
                     {hasMinLength ? '✓' : '•'} 8+ characters
@@ -257,7 +257,7 @@ export const Register: React.FC = () => {
           </CardFooter>
         </Card>
 
-        <div className="flex items-center justify-center gap-1.5 text-[11px] text-slate-600">
+        <div className="flex items-center justify-center gap-1.5 text-[11px] text-slate-600 dark:text-slate-300">
           <ShieldCheck className="h-3.5 w-3.5 text-teal-600" />
           <span>Sovereign Local Self-Hosted Infrastructure (Zero External Telemetry)</span>
         </div>

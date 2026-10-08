@@ -55,7 +55,7 @@ export const AssessmentResult: React.FC = () => {
       <div className="flex min-h-[65vh] items-center justify-center">
         <div className="flex flex-col items-center space-y-4">
           <div className="h-10 w-10 animate-spin rounded-full border-4 border-emerald-600 border-t-transparent" />
-          <p className="text-sm font-semibold text-slate-600 ">
+          <p className="text-sm font-semibold text-slate-600 dark:text-slate-300 ">
             Compiling FRAC competency gap matrix & XAI diagnostic rationale...
           </p>
         </div>
@@ -69,7 +69,7 @@ export const AssessmentResult: React.FC = () => {
         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-100 text-rose-600">
           <AlertTriangle className="h-6 w-6" />
         </div>
-        <h2 className="text-lg font-bold text-slate-900 ">Dossier Unavailable</h2>
+        <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100 ">Dossier Unavailable</h2>
         <p className="text-xs text-slate-500">{error || 'Could not find the requested assessment record.'}</p>
         <Link to="/assessment">
           <Button>Return to Assessment Dashboard</Button>
@@ -95,7 +95,7 @@ export const AssessmentResult: React.FC = () => {
               National Programme for Civil Services Capacity Building (NPCSCB)
             </span>
           </div>
-          <h1 className="text-2xl font-extrabold tracking-tight text-slate-900  flex items-center gap-2">
+          <h1 className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100  flex items-center gap-2">
             Competency Diagnostic Dossier
             <span className="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-50  text-emerald-700  border border-emerald-200 ">
               FRAC Certified
@@ -104,8 +104,8 @@ export const AssessmentResult: React.FC = () => {
           <p className="text-xs text-slate-500 ">
             Evaluated Officer: <strong className="text-slate-800 ">{dossier.officer_name}</strong> ({dossier.designation}) • {dossier.department}
           </p>
-          <p className="text-[11px] text-slate-600">
-            Work-Based Role: <span className="font-semibold text-slate-600 ">{dossier.work_role}</span> • Evaluated in {formatMinutes(dossier.time_taken_seconds)} ({dossier.score_achieved}/{dossier.total_questions} scenarios mastered)
+          <p className="text-[11px] text-slate-600 dark:text-slate-300">
+            Work-Based Role: <span className="font-semibold text-slate-600 dark:text-slate-300 ">{dossier.work_role}</span> • Evaluated in {formatMinutes(dossier.time_taken_seconds)} ({dossier.score_achieved}/{dossier.total_questions} scenarios mastered)
           </p>
         </div>
 
@@ -213,10 +213,10 @@ export const AssessmentResult: React.FC = () => {
             <div key={comp.competency_id} className="p-5 space-y-2.5">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-bold text-slate-900 ">
+                  <span className="text-xs font-bold text-slate-900 dark:text-slate-100 ">
                     {comp.competency_name}
                   </span>
-                  <span className="text-[10px] font-mono text-slate-600">
+                  <span className="text-[10px] font-mono text-slate-600 dark:text-slate-300">
                     ({comp.competency_code})
                   </span>
                 </div>
@@ -259,7 +259,7 @@ export const AssessmentResult: React.FC = () => {
             <span className="text-xs font-bold text-emerald-700  uppercase tracking-wider">
               Official Directive & Next Steps
             </span>
-            <p className="text-sm font-semibold text-slate-900  leading-relaxed">
+            <p className="text-sm font-semibold text-slate-900 dark:text-slate-100  leading-relaxed">
               {dossier.recommended_action}
             </p>
             <p className="text-xs text-slate-500">
