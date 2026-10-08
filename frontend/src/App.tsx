@@ -13,7 +13,6 @@ import { api } from '@/lib/api';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { PageSkeleton } from '@/components/ui/skeleton';
-import { DemoModeModal } from '@/components/demo/DemoModeModal';
 import { CommandPalette } from '@/components/navigation/CommandPalette';
 import {
   Shield,
@@ -447,7 +446,7 @@ function OverviewPage() {
         <div className="relative z-10 max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 rounded-full bg-white/60 backdrop-blur-md px-3 py-1 text-xs font-semibold text-teal-800 border border-indigo-200/50">
             <Sparkles className="h-3.5 w-3.5 text-[#FF9933]" />
-            <span>{t('overview.badge', 'Problem Statement SIH26101 • Mission Karmayogi Bharat')}</span>
+            <span>{t('overview.badge', 'Mission Karmayogi Bharat Sovereign Portal')}</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
@@ -571,19 +570,11 @@ function OverviewPage() {
 export default function App() {
   const location = useLocation();
   const isAuthPage = ['/login', '/register', '/forgot-password'].includes(location.pathname);
-  const [demoModalOpen, setDemoModalOpen] = useState(false);
-  const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
+    const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
 
   // Global Keyboard Shortcuts (Ctrl+Shift+D for Demo Cockpit, Ctrl+K for Command Palette)
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      // Ctrl + Shift + D (or Cmd + Shift + D): Hidden Demo Cockpit
-      if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'D' || e.key === 'd')) {
-        e.preventDefault();
-        setDemoModalOpen((prev) => !prev);
-      }
-      // Ctrl + K (or Cmd + K): Command Palette
-      else if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+    const handleKeyDown = (e: KeyboardEvent) => {        if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
         e.preventDefault();
         setCommandPaletteOpen((prev) => !prev);
       }
@@ -698,17 +689,12 @@ export default function App() {
         </Suspense>
       </main>
 
-      {/* Global SIH Evaluator Cockpit Modal (Ctrl + Shift + D) */}
-      <DemoModeModal
-        isOpen={demoModalOpen}
-        onClose={() => setDemoModalOpen(false)}
-      />
+      
 
       {/* Global Command Palette (Ctrl + K) */}
       <CommandPalette
         isOpen={commandPaletteOpen}
         onClose={() => setCommandPaletteOpen(false)}
-        onOpenDemo={() => setDemoModalOpen(true)}
       />
 
       {/* Sovereign National Footer */}
@@ -717,12 +703,10 @@ export default function App() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-indigo-500" />
-              <span>AI Karmayogi • Smart India Hackathon 2026 (SIH26101)</span>
+              <span>AI Karmayogi Platform</span>
             </div>
             <div className="flex items-center gap-4">
               <span className="hidden sm:inline">Press <kbd className="px-1.5 py-0.5 rounded bg-slate-100  border text-[10px] font-mono">Ctrl+K</kbd> for Command Palette</span>
-              <span>•</span>
-              <span className="hidden sm:inline">Press <kbd className="px-1.5 py-0.5 rounded bg-slate-100  border text-[10px] font-mono">Ctrl+Shift+D</kbd> for Demo Mode</span>
               <span>•</span>
               <span>100% Sovereign Local Stack</span>
             </div>

@@ -30,7 +30,6 @@ import {
 interface CommandPaletteProps {
   isOpen: boolean;
   onClose: () => void;
-  onOpenDemo: () => void;
 }
 
 interface CommandItem {
@@ -43,7 +42,7 @@ interface CommandItem {
   perform: () => void;
 }
 
-export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose, onOpenDemo }) => {
+export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose }) => {
   const [query, setQuery] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -186,18 +185,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose,
         toggleTheme();
         info('Theme Updated', `Switched to ${theme === 'dark' ? 'light' : 'dark'} mode.`);
         onClose();
-      },
-    },
-    {
-      id: 'action-demo-cockpit',
-      category: 'Actions',
-      label: 'Open SIH Evaluation Cockpit',
-      sublabel: 'Instant demo switcher & database sync',
-      icon: <Sparkles className="h-4 w-4 text-amber-700" />,
-      shortcut: 'Ctrl+Shift+D',
-      perform: () => {
-        onClose();
-        onOpenDemo();
       },
     },
 

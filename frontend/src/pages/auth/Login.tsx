@@ -340,12 +340,12 @@ export const Login: React.FC = () => {
               </Link>
             </div>
 
-            {/* SIH 2026 Evaluation Quick Logins */}
+            {/* Quick Logins */}
             <div className="w-full rounded-2xl bg-white  p-4 border border-slate-200  shadow-xs space-y-2.5">
               <div className="flex items-center justify-between text-[11px] font-bold text-slate-600 ">
                 <span className="flex items-center gap-1.5">
                   <Sparkles className="h-3.5 w-3.5 text-teal-600" />
-                  {t('login.sih_quick_logins', 'SIH 2026 Quick Logins:')}
+                  {t('login.quick_logins', 'Quick Logins:')}
                 </span>
                 <span className="text-[10px] text-slate-600 font-normal">{t('login.one_click', '1-Click Auth')}</span>
               </div>
