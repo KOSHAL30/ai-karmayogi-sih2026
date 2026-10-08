@@ -122,7 +122,7 @@ export const Login: React.FC = () => {
           {/* Top Sovereign Badge Cluster */}
           <div className="relative z-10 space-y-3">
             <div className="flex items-center gap-3">
-              <div className="px-3 py-1 rounded bg-white/10 backdrop-blur-md border border-white/15 text-[11px] font-semibold tracking-wider uppercase text-[#FF9933] flex items-center gap-1.5 shadow-xs">
+              <div className="px-3 py-1 rounded bg-white/80 backdrop-blur-md border border-white/15 text-[11px] font-semibold tracking-wider uppercase text-[#FF9933] flex items-center gap-1.5 shadow-xs">
                 <span>{t('brand.motto', 'सत्यमेव जयते • Government of India')}</span>
               </div>
               <span className="text-xs text-slate-600">|</span>
@@ -153,7 +153,7 @@ export const Login: React.FC = () => {
             {/* 3 Glassmorphic Key Metrics Bento Cards */}
             <div className="grid grid-cols-3 gap-3.5 pt-3">
               {/* Metric 1 */}
-              <div className="bg-white/[0.06] backdrop-blur-md border border-white/10 rounded-xl p-4 transition-all duration-200 hover:bg-white/[0.09] hover:border-white/20">
+              <div className="bg-white/[0.06] backdrop-blur-md border border-indigo-200/50 rounded-xl p-4 transition-all duration-200 hover:bg-white/[0.09] hover:border-indigo-200">
                 <div className="flex items-center gap-1.5 text-amber-300 mb-1">
                   <Users className="h-4 w-4" />
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-600 font-mono">
@@ -167,7 +167,7 @@ export const Login: React.FC = () => {
               </div>
 
               {/* Metric 2 */}
-              <div className="bg-white/[0.06] backdrop-blur-md border border-white/10 rounded-xl p-4 transition-all duration-200 hover:bg-white/[0.09] hover:border-white/20">
+              <div className="bg-white/[0.06] backdrop-blur-md border border-indigo-200/50 rounded-xl p-4 transition-all duration-200 hover:bg-white/[0.09] hover:border-indigo-200">
                 <div className="flex items-center gap-1.5 text-teal-700 mb-1">
                   <Building2 className="h-4 w-4" />
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-600 font-mono">
@@ -181,7 +181,7 @@ export const Login: React.FC = () => {
               </div>
 
               {/* Metric 3 */}
-              <div className="bg-white/[0.06] backdrop-blur-md border border-white/10 rounded-xl p-4 transition-all duration-200 hover:bg-white/[0.09] hover:border-white/20">
+              <div className="bg-white/[0.06] backdrop-blur-md border border-indigo-200/50 rounded-xl p-4 transition-all duration-200 hover:bg-white/[0.09] hover:border-indigo-200">
                 <div className="flex items-center gap-1.5 text-sky-300 mb-1">
                   <Brain className="h-4 w-4" />
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-600 font-mono">
@@ -197,7 +197,7 @@ export const Login: React.FC = () => {
           </div>
 
           {/* Bottom Sovereignty & Security Notice */}
-          <div className="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-600">
+          <div className="relative z-10 pt-4 border-t border-indigo-200/50 flex items-center justify-between text-xs text-slate-600">
             <div className="flex items-center gap-2">
               <ShieldCheck className="h-4 w-4 text-teal-700" />
               <span className="font-medium text-slate-600">

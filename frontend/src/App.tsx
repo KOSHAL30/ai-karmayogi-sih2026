@@ -127,7 +127,7 @@ function OverviewPage() {
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
                 {t('overview.welcome_back', 'Welcome back')}, {user.full_name}
               </h1>
-              <p className="text-sm sm:text-base text-teal-200/80 font-medium mt-1">
+              <p className="text-sm sm:text-base text-teal-700/90 font-medium mt-1">
                 {user.designation} • {user.department}, {t('brand.motto', 'Government of India')}
               </p>
             </div>
@@ -136,7 +136,7 @@ function OverviewPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
               {/* Card 1: Diagnostic Assessment */}
               <Link to="/assessment" className="group">
-                <div className="h-full bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/10 hover:border-emerald-400/50 rounded-2xl p-5 transition-all duration-200 flex flex-col justify-between">
+                <div className="h-full bg-white/60 hover:bg-white/90 backdrop-blur-md border border-indigo-200/50 hover:border-emerald-400/50 rounded-2xl p-5 transition-all duration-200 flex flex-col justify-between">
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <div className="h-9 w-9 rounded-xl bg-indigo-500/20 text-teal-700 flex items-center justify-center">
@@ -162,7 +162,7 @@ function OverviewPage() {
 
               {/* Card 2: Learning Path */}
               <Link to="/learning-path" className="group">
-                <div className="h-full bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/10 hover:border-emerald-400/50 rounded-2xl p-5 transition-all duration-200 flex flex-col justify-between">
+                <div className="h-full bg-white/60 hover:bg-white/90 backdrop-blur-md border border-indigo-200/50 hover:border-emerald-400/50 rounded-2xl p-5 transition-all duration-200 flex flex-col justify-between">
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <div className="h-9 w-9 rounded-xl bg-indigo-500/20 text-teal-700 flex items-center justify-center">
@@ -188,7 +188,7 @@ function OverviewPage() {
 
               {/* Card 3: Recommendations */}
               <Link to="/recommendations" className="group">
-                <div className="h-full bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/10 hover:border-amber-400/50 rounded-2xl p-5 transition-all duration-200 flex flex-col justify-between">
+                <div className="h-full bg-white/60 hover:bg-white/90 backdrop-blur-md border border-indigo-200/50 hover:border-amber-400/50 rounded-2xl p-5 transition-all duration-200 flex flex-col justify-between">
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <div className="h-9 w-9 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center">
@@ -289,7 +289,7 @@ function OverviewPage() {
               <CardContent className="pt-5 pb-5 flex flex-col justify-between h-full">
                 <div>
                   <div className="flex items-center justify-between text-xs">
-                    <span className="font-semibold text-teal-200">Mandatory Assessment</span>
+                    <span className="font-semibold text-teal-700">Mandatory Assessment</span>
                     <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30">
                       3 Days Left
                     </span>
@@ -436,7 +436,7 @@ function OverviewPage() {
                     <Cpu className="h-3.5 w-3.5 text-teal-700" />
                     Ollama AI Engine
                   </span>
-                  <span className="text-teal-300 font-bold">LOCAL GPU</span>
+                  <span className="text-teal-700 font-bold">LOCAL GPU</span>
                 </div>
                 <div className="flex items-center justify-between py-1 border-b border-slate-200/80">
                   <span className="text-slate-600 flex items-center gap-1.5">
@@ -512,7 +512,7 @@ function OverviewPage() {
       <div className="relative overflow-hidden rounded-3xl bg-indigo-50 border-indigo-100 p-8 sm:p-12 text-slate-900 shadow-2xl border border-slate-200/40">
         <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-teal-500/10 blur-3xl pointer-events-none" />
         <div className="relative z-10 max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md px-3 py-1 text-xs font-semibold text-teal-200 border border-white/15">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/60 backdrop-blur-md px-3 py-1 text-xs font-semibold text-teal-800 border border-indigo-200/50">
             <Sparkles className="h-3.5 w-3.5 text-[#FF9933]" />
             <span>{t('overview.badge', 'Problem Statement SIH26101 • Mission Karmayogi Bharat')}</span>
           </div>
@@ -521,7 +521,7 @@ function OverviewPage() {
             {t('overview.hero_title', 'AI-Enabled Competency Diagnostic & Learning Ecosystem')}
           </h1>
 
-          <p className="text-sm sm:text-base text-teal-100/80 leading-relaxed max-w-2xl">
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl">
             {t('overview.hero_desc', 'Diagnosing civil service competency gaps, aligning role-based training via the iGOT Karmayogi repository, and delivering automated assessment generation for modern Indian governance.')}
           </p>
 

@@ -132,7 +132,7 @@ export const RecommendationDashboard: React.FC = () => {
               <button
                 onClick={() => regenerateMutation.mutate()}
                 disabled={regenerateMutation.isPending}
-                className="flex items-center gap-1.5 rounded-xl border border-teal-200 bg-white/10 px-4 py-2.5 text-xs font-semibold text-slate-900 backdrop-blur-md transition hover:bg-white/20 active:scale-95 disabled:opacity-50"
+                className="flex items-center gap-1.5 rounded-xl border border-teal-200 bg-white/80 px-4 py-2.5 text-xs font-semibold text-slate-900 backdrop-blur-md transition hover:bg-white/20 active:scale-95 disabled:opacity-50"
               >
                 <RefreshCw className={`h-4 w-4 ${regenerateMutation.isPending ? 'animate-spin' : ''}`} />
                 <span>{regenerateMutation.isPending ? 'Recalculating...' : 'Regenerate'}</span>
