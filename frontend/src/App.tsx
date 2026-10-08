@@ -308,9 +308,9 @@ function OverviewPage() {
         </div>
 
         {/* 2-Column Dashboard Grid: Recent Cadre Activity & Sovereign Node Telemetry */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6">
           {/* Left Column (2/3): Recent Cadre Activity */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="space-y-4">
             <Card className="border-slate-200/80  shadow-sm">
               <CardHeader className="pb-3 border-b border-slate-100">
                 <div className="flex items-center justify-between">
@@ -406,73 +406,6 @@ function OverviewPage() {
 
           {/* Right Column (1/3): Sovereign Node Telemetry */}
           <div className="space-y-4">
-            <Card className="border-slate-200/80  shadow-sm bg-white  text-slate-900">
-              <CardHeader className="pb-3 border-b border-slate-200">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <CardTitle className="text-sm font-bold text-slate-900">
-                      Sovereign Node Telemetry
-                    </CardTitle>
-                  </div>
-                  <span className="text-[10px] font-mono text-teal-700 bg-emerald-950/60 border border-emerald-800 px-2 py-0.5 rounded">
-                    ONLINE
-                  </span>
-                </div>
-                <CardDescription className="text-[11px] text-slate-600">
-                  Node: NEW-DELHI-01 • Sovereign Air-Gapped Cluster
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-4 space-y-3 font-mono text-xs">
-                <div className="flex items-center justify-between py-1 border-b border-slate-200/80">
-                  <span className="text-slate-600 flex items-center gap-1.5">
-                    <Database className="h-3.5 w-3.5 text-teal-400" />
-                    MongoDB Atlas DB
-                  </span>
-                  <span className="text-teal-700 font-bold">4ms • Synced</span>
-                </div>
-                <div className="flex items-center justify-between py-1 border-b border-slate-200/80">
-                  <span className="text-slate-600 flex items-center gap-1.5">
-                    <Cpu className="h-3.5 w-3.5 text-teal-700" />
-                    Ollama AI Engine
-                  </span>
-                  <span className="text-teal-700 font-bold">LOCAL GPU</span>
-                </div>
-                <div className="flex items-center justify-between py-1 border-b border-slate-200/80">
-                  <span className="text-slate-600 flex items-center gap-1.5">
-                    <Sparkles className="h-3.5 w-3.5 text-amber-700" />
-                    Qwen 3.8 27B:8b Grounding
-                  </span>
-                  <span className="text-teal-700 font-bold">100% In-Proc</span>
-                </div>
-                <div className="flex items-center justify-between py-1 border-b border-slate-200/80">
-                  <span className="text-slate-600 flex items-center gap-1.5">
-                    <Layers className="h-3.5 w-3.5 text-purple-400" />
-                    Vector Store (Atlas Vector Search)
-                  </span>
-                  <span className="text-slate-600 font-bold">768-dim HNSW</span>
-                </div>
-                <div className="flex items-center justify-between py-1">
-                  <span className="text-slate-600 flex items-center gap-1.5">
-                    <Shield className="h-3.5 w-3.5 text-teal-700" />
-                    API Protocol
-                  </span>
-                  <span className="text-slate-600 font-bold">v1.0.0 STQC</span>
-                </div>
-
-                <div className="pt-3">
-                  <div className="p-2.5 rounded-xl bg-white/60 border border-slate-200/60 space-y-1">
-                    <div className="flex items-center gap-1.5 text-[11px] font-bold text-teal-700">
-                      <Lock className="h-3 w-3" />
-                      <span>NIC Sovereign Security Sandbox</span>
-                    </div>
-                    <p className="text-[10px] text-slate-600 font-sans leading-relaxed">
-                      No citizen or officer telemetry leaves government cloud infrastructure. All 2PL-IRT calculations execute on-host.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
 
             {/* FRAC Statutory Compliance Download Card */}
             <Card className="border-slate-200/80  shadow-xs">
