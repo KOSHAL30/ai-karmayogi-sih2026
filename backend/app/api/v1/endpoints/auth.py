@@ -4,7 +4,7 @@
 # ==============================================================================
 
 from fastapi import APIRouter, Depends, HTTPException, status, Response, Request
-from app.main import limiter
+from app.core.rate_limit import limiter
 from app.core.database import get_db
 from app.core.deps import get_current_user_payload
 from app.schemas.common import APIResponse
