@@ -103,7 +103,7 @@ export const Navbar: React.FC = () => {
 
             {/* Navigation items for authenticated session */}
             {isAuthenticated && user && (
-              <nav className="hidden lg:flex items-center space-x-0.5 pl-2 lg:pl-4 border-l border-slate-200  overflow-x-auto scrollbar-hide flex-1">
+              <nav aria-label="Main Navigation" role="navigation" className="hidden lg:flex items-center space-x-0.5 pl-2 lg:pl-4 border-l border-slate-200  overflow-x-auto scrollbar-hide flex-1">
                 <Link
                   to="/"
                   className={`px-2 py-1 rounded-md text-[13px] font-medium whitespace-nowrap shrink-0 transition-colors ${

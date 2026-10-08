@@ -6,6 +6,7 @@
 import os
 import json
 import httpx
+import re
 from typing import Optional
 from groq import AsyncGroq
 from app.core.config import settings
@@ -15,6 +16,21 @@ logger = logging.getLogger(__name__)
 
 class LLMProvider:
     @classmethod
+    def _scrub_pii(cls, text: str) -> str:
+        """
+        Federal DLP: Masks highly sensitive Personal Identifiable Information (PII) before transmission.
+        """
+        # Mask Aadhaar (12 digits, optional spaces/hyphens)
+        text = re.sub(r'\d{4}[\s\-]?\d{4}[\s\-]?\d{4}', '[REDACTED_AADHAAR]', text)
+        # Mask PAN Card (5 letters, 4 numbers, 1 letter)
+        text = re.sub(r'[A-Z]{5}[0-9]{4}[A-Z]{1}', '[REDACTED_PAN]', text)
+        # Mask Indian Mobile Numbers
+        text = re.sub(r'(?:\+91[\s\-]?|91[\s\-]?)?[6-9]\d{9}', '[REDACTED_PHONE]', text)
+        # Mask Generic Emails
+        text = re.sub(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}', '[REDACTED_EMAIL]', text)
+        return text
+
+    @classmethod
     async def generate_response(
         cls, 
         system_prompt: str, 
@@ -23,8 +39,12 @@ class LLMProvider:
         top_p: float = 0.9
     ) -> Optional[str]:
         """
-        Routes the request to the configured LLM provider (Groq or Ollama).
+        Routes the request to the configured LLM provider (Groq or Ollama) with strict PII scrubbing.
         """
+        # DLP Interception
+        system_prompt = cls._scrub_pii(system_prompt)
+        user_prompt = cls._scrub_pii(user_prompt)
+        
         provider = settings.LLM_PROVIDER.lower()
         
         if provider == "groq" and settings.GROQ_API_KEY:
