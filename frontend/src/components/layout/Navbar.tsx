@@ -193,15 +193,6 @@ export const Navbar: React.FC = () => {
             {/* Multilingual Selector (Eighth Schedule Indic Languages) */}
             <LanguageSelector variant="compact" />
 
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              aria-label="Toggle theme"
-              className="p-2 rounded-lg text-slate-600  hover:bg-slate-100  transition-colors"
-            >
-              {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-            </button>
-
             {/* Notification Bell with Dropdown Popover */}
             {isAuthenticated && (
               <div className="relative">
