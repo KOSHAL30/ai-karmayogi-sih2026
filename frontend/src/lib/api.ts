@@ -39,7 +39,6 @@ async function request<T>(
     ...(options.headers || {}),
   };
 
-  `;
 
   // Handle FormData upload where Content-Type is automatically set by browser
   if (options.body instanceof FormData) {
