@@ -56,15 +56,37 @@ async def upload_document(
     """
     Validates, extracts, chunks and embeds sovereign government PDFs.
     """
-    if not file.filename or not file.filename.lower().endswith(".pdf"):
+    import os
+    from werkzeug.utils import secure_filename if False else None
+    
+    # 1. Path Traversal Fix: Sanitize filename
+    safe_filename = os.path.basename(file.filename) if file.filename else "unknown.pdf"
+    safe_filename = safe_filename.replace("/", "").replace("\", "")
+
+    if not safe_filename.lower().endswith(".pdf"):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Only PDF documents are supported for sovereign intelligence parsing."
         )
 
-    # Read content
+    # 2. DoS Fix: Check size before loading fully into memory
+    if file.size and file.size > MAX_FILE_SIZE_BYTES:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"File exceeds maximum allowed size of 50 MB."
+        )
+        
+    # Read content safely
     contents = await file.read()
     file_size = len(contents)
+    
+    # 3. File Signature Spoofing Fix: Verify Magic Bytes
+    if not contents.startswith(b"%PDF"):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Invalid file signature. File is not a genuine PDF."
+        )
+
     if file_size > MAX_FILE_SIZE_BYTES:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
@@ -86,7 +108,7 @@ async def upload_document(
     # Save to local uploads disk
     user_id_str = str(payload.get("sub"))
     doc_id = new_uuid()
-    save_filename = f"{doc_id}_{file.filename}"
+    save_filename = f"{doc_id}_{safe_filename}"
     file_path = os.path.join(UPLOAD_DIR, save_filename)
 
     with open(file_path, "wb") as f:

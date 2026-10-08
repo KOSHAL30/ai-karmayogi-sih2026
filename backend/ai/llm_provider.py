@@ -16,6 +16,26 @@ logger = logging.getLogger(__name__)
 
 class LLMProvider:
     @classmethod
+    def _firewall_prompt_injection(cls, text: str) -> None:
+        """
+        Federal Security: Semantic Firewall to block LLM Jailbreak and Prompt Injection attempts.
+        """
+        lower_text = text.lower()
+        blocked_phrases = [
+            "ignore all previous instructions",
+            "ignore previous instructions",
+            "disregard previous instructions",
+            "forget all instructions",
+            "dump the database",
+            "system prompt",
+            "you are now",
+            "new instructions"
+        ]
+        for phrase in blocked_phrases:
+            if phrase in lower_text:
+                raise ValueError("SECURITY_VIOLATION: Prompt injection attempt detected. Request blocked by AI Karmayogi Semantic Firewall.")
+                
+    @classmethod
     def _scrub_pii(cls, text: str) -> str:
         """
         Federal DLP: Masks highly sensitive Personal Identifiable Information (PII) before transmission.
@@ -44,6 +64,9 @@ class LLMProvider:
         # DLP Interception
         system_prompt = cls._scrub_pii(system_prompt)
         user_prompt = cls._scrub_pii(user_prompt)
+        
+        # Injection Firewall
+        cls._firewall_prompt_injection(user_prompt)
         
         provider = settings.LLM_PROVIDER.lower()
         
