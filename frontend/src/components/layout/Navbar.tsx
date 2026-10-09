@@ -328,6 +328,31 @@ export const Navbar: React.FC = () => {
             )}
           </div>
         </div>
+
+        {/* Mobile Navigation (Scrollable) */}
+        {isAuthenticated && user && (
+          <nav
+            aria-label="Mobile Navigation"
+            role="navigation"
+            className="lg:hidden flex items-center space-x-2 px-4 py-2 border-t border-slate-200 overflow-x-auto scrollbar-hide bg-slate-50/50 backdrop-blur-sm"
+          >
+            <Link to="/" className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors ${location.pathname === '/' ? 'bg-indigo-100 text-indigo-700' : 'bg-white text-slate-600 border border-slate-200'}`}>{t('nav.overview', 'Overview')}</Link>
+            <Link to="/assessment" className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors ${location.pathname.startsWith('/assessment') ? 'bg-indigo-100 text-indigo-700' : 'bg-white text-slate-600 border border-slate-200'}`}>{t('nav.assessments', 'Assessments')}</Link>
+            <Link to="/recommendations" className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors ${location.pathname === '/recommendations' ? 'bg-indigo-100 text-indigo-700' : 'bg-white text-slate-600 border border-slate-200'}`}>{t('nav.recommendations', 'Recommendations')}</Link>
+            <Link to="/learning-path" className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors ${location.pathname === '/learning-path' ? 'bg-indigo-100 text-indigo-700' : 'bg-white text-slate-600 border border-slate-200'}`}>{t('nav.learning_path', 'Learning Path')}</Link>
+            
+            {/* Conditional Roles for Mobile */}
+            {(user.role === 'trainer' || user.role === 'admin' || user.role === 'administrator') && (
+              <Link to="/trainer/documents" className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors ${location.pathname.startsWith('/trainer/documents') ? 'bg-indigo-100 text-indigo-700' : 'bg-white text-slate-600 border border-slate-200'}`}>{t('nav.trainer_studio', 'Trainer Studio')}</Link>
+            )}
+            {(user.role === 'admin' || user.role === 'administrator' || user.role === 'department_head') && (
+              <>
+                <Link to="/admin" className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors ${location.pathname === '/admin' ? 'bg-indigo-100 text-indigo-700' : 'bg-white text-slate-600 border border-slate-200'}`}>{t('nav.admin_dashboard', 'Admin')}</Link>
+                <Link to="/certificates" className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors ${location.pathname === '/certificates' ? 'bg-indigo-100 text-indigo-700' : 'bg-white text-slate-600 border border-slate-200'}`}>{t('nav.certificates', 'Certificates')}</Link>
+              </>
+            )}
+          </nav>
+        )}
       </header>
 
       
