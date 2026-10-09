@@ -37,7 +37,7 @@ rag_router = APIRouter()
 mcq_router = APIRouter()
 
 MAX_FILE_SIZE_BYTES = settings.MAX_UPLOAD_SIZE_MB * 1024 * 1024
-UPLOAD_DIR = settings.UPLOAD_DIR
+UPLOAD_DIR = "/tmp/uploads" if os.environ.get("VERCEL") else settings.UPLOAD_DIR
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 # In-memory store for draft MCQs pending trainer approval
